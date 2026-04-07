@@ -66,17 +66,23 @@ export default function Home() {
           </a>
           <a
             href="tel:9035830083"
-            className="rounded-full px-5 py-2 text-sm font-bold text-black md:px-6 md:text-base"
+            className="flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold text-black md:px-6 md:text-base"
             style={{ backgroundColor: '#f5c518' }}
           >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 md:h-5 md:w-5">
+              <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
+            </svg>
             Call Now
           </a>
           <a
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-full border-2 border-white px-5 py-2 text-sm font-bold text-white sm:inline-block md:px-6 md:text-base"
+            className="hidden items-center gap-2 rounded-full border-2 border-white px-5 py-2 text-sm font-bold text-white sm:inline-flex md:px-6 md:text-base"
           >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 md:h-5 md:w-5">
+              <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+            </svg>
             Get Directions
           </a>
         </div>
@@ -101,23 +107,6 @@ export default function Home() {
           <p className="mt-3 text-xl" style={{ color: '#f5c518' }}>
             Your One-Stop Shop · Foreign &amp; Domestic · Bonham, TX
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <a
-              href="tel:9035830083"
-              className="rounded-full px-8 py-4 text-lg font-bold text-black"
-              style={{ backgroundColor: '#f5c518' }}
-            >
-              Call Now
-            </a>
-            <a
-              href={MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border-2 border-white px-8 py-4 text-lg text-white"
-            >
-              Get Directions
-            </a>
-          </div>
         </div>
 
         {/* Services overlay grid */}
@@ -143,28 +132,6 @@ export default function Home() {
             {item}
           </span>
         ))}
-      </section>
-
-      {/* ── SERVICES GRID (detailed) ────────────────────── */}
-      <section className="bg-white px-4 py-16">
-        <h2 className="mb-4 text-center text-3xl font-bold" style={{ color: '#1a3a6b' }}>
-          Everything Your Vehicle Needs
-        </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-          From tires and brakes to A/C and lift kits — we handle it all under one roof so you don&#39;t have to drive all over town.
-        </p>
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className="rounded-xl bg-white p-6 shadow-md transition-shadow hover:shadow-xl"
-            >
-              <div className="mb-3 text-4xl">{s.emoji}</div>
-              <h3 className="mb-2 text-lg font-bold text-gray-900">{s.title}</h3>
-              <p className="text-sm text-gray-600">{s.desc}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* ── PHOTO STRIP ─────────────────────────────────── */}
