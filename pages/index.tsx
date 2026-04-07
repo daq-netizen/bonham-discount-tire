@@ -4,18 +4,18 @@ import Image from 'next/image'
 import DaqWorksLogo from '../components/DaqWorksLogo'
 
 const services = [
-  { emoji: '🔧', title: 'New & Used Tires', desc: 'Budget-friendly to premium brands. New and used options always in stock.' },
-  { emoji: '⚙️', title: 'Wheel Alignment', desc: 'Precision alignment to extend tire life and improve handling.' },
-  { emoji: '🛢️', title: 'Oil Change', desc: 'Starting at $24.99. Synthetic blend, full synthetic, and diesel options.' },
-  { emoji: '🛑', title: 'Brakes', desc: 'Full brake inspection, pad replacement, and rotor service.' },
-  { emoji: '❄️', title: 'A/C Service', desc: 'Diagnosis and repair to keep you cool all summer long.' },
-  { emoji: '🚗', title: 'Custom Wheels', desc: 'Custom wheel packages and lifted truck builds.' },
-  { emoji: '🔋', title: 'Batteries', desc: 'Testing, replacement, and installation for all makes and models.' },
-  { emoji: '💨', title: 'Exhaust & Muffler', desc: 'Full exhaust system repair, muffler replacement, and catalytic converters.' },
-  { emoji: '🔩', title: 'Suspension & Steering', desc: 'Shocks, struts, ball joints, and tie rods to restore your ride.' },
-  { emoji: '🛞', title: 'Tire Repair & Rotation', desc: 'Flat fixes, plugs, patches, and scheduled rotations to maximize tire life.' },
-  { emoji: '🚙', title: 'Lift Kits & Leveling', desc: 'Truck and Jeep lift kits installed by experienced technicians.' },
-  { emoji: '🔍', title: 'Diagnostics', desc: 'Check engine lights, electrical issues, and full vehicle inspections.' },
+  { emoji: '🛞', title: 'Tires & Wheels', desc: 'New & used tires, custom wheels, mounting, balancing, rotation, flat repair, and alignment.' },
+  { emoji: '🔧', title: 'Engine & Performance', desc: 'Engine replacement, rebuilds, tune-ups, timing belts, spark plugs, and fuel system service.' },
+  { emoji: '🛢️', title: 'Oil & Fluid Service', desc: 'Oil changes from $24.99. Transmission fluid, coolant flushes, power steering, and brake fluid.' },
+  { emoji: '🛑', title: 'Brakes & Safety', desc: 'Pads, rotors, calipers, brake lines, and complete brake system overhauls.' },
+  { emoji: '❄️', title: 'A/C & Heating', desc: 'Compressor replacement, recharge, heater cores, blend doors, and full climate system repair.' },
+  { emoji: '🌡️', title: 'Cooling System', desc: 'Radiators, water pumps, thermostats, hoses, and overheating diagnosis.' },
+  { emoji: '⚙️', title: 'Transmission', desc: 'Fluid service, filter replacement, solenoids, and complete transmission replacement.' },
+  { emoji: '🔩', title: 'Suspension & Steering', desc: 'Shocks, struts, ball joints, tie rods, control arms, and lift kits for trucks and Jeeps.' },
+  { emoji: '💨', title: 'Exhaust & Emissions', desc: 'Mufflers, catalytic converters, exhaust manifolds, and full exhaust system fabrication.' },
+  { emoji: '🔋', title: 'Electrical & Starting', desc: 'Batteries, alternators, starters, wiring repair, and full electrical diagnostics.' },
+  { emoji: '🔍', title: 'Diagnostics & Inspection', desc: 'Check engine lights, computer scanning, pre-purchase inspections, and state inspections.' },
+  { emoji: '🚙', title: 'Trucks & Off-Road', desc: 'Lift kits, leveling, custom wheels, off-road tires, and heavy-duty upgrades.' },
 ]
 
 const reviews = [
@@ -261,17 +261,18 @@ export default function Home() {
             <div>
               <h3 className="mb-3 font-bold">Services</h3>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li>New &amp; Used Tires</li>
-                <li>Wheel Alignment</li>
-                <li>Oil Change</li>
-                <li>Brakes</li>
-                <li>A/C Service</li>
-                <li>Custom Wheels</li>
-                <li>Batteries</li>
-                <li>Exhaust &amp; Muffler</li>
-                <li>Suspension</li>
-                <li>Lift Kits</li>
+                <li>Tires &amp; Wheels</li>
+                <li>Engine &amp; Performance</li>
+                <li>Oil &amp; Fluid Service</li>
+                <li>Brakes &amp; Safety</li>
+                <li>A/C &amp; Heating</li>
+                <li>Cooling System</li>
+                <li>Transmission</li>
+                <li>Suspension &amp; Steering</li>
+                <li>Exhaust &amp; Emissions</li>
+                <li>Electrical &amp; Starting</li>
                 <li>Diagnostics</li>
+                <li>Trucks &amp; Off-Road</li>
               </ul>
             </div>
             <div>
