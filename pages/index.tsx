@@ -250,51 +250,10 @@ export default function Home() {
 
       {/* ── FOOTER ──────────────────────────────────────── */}
       <footer style={{ backgroundColor: '#1a3a6b' }} className="text-white">
-        <div className="mx-auto flex max-w-5xl flex-col items-start gap-8 px-4 py-12 md:flex-row md:justify-between">
-          {/* Left */}
-          <div>
-            <Image src="/images/logo.png" height={64} width={150} alt="Bonham Discount Tire and Auto" />
-            <p className="mt-3 max-w-xs text-sm text-gray-300">
-              Bonham&#39;s trusted tire and auto shop. Foreign &amp; domestic. Serving Bonham, TX and surrounding areas.
-            </p>
-          </div>
-
-          {/* Right — two columns */}
-          <div className="flex gap-8">
-            <div>
-              <h3 className="mb-3 font-bold">Services</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>Tires &amp; Wheels</li>
-                <li>Engine &amp; Performance</li>
-                <li>Oil &amp; Fluid Service</li>
-                <li>Brakes &amp; Safety</li>
-                <li>A/C &amp; Heating</li>
-                <li>Cooling System</li>
-                <li>Transmission</li>
-                <li>Suspension &amp; Steering</li>
-                <li>Exhaust &amp; Emissions</li>
-                <li>Electrical &amp; Starting</li>
-                <li>Diagnostics</li>
-                <li>Trucks &amp; Off-Road</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-3 font-bold">Contact</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>1603 N Center St</li>
-                <li>Bonham, TX 75418</li>
-                <li>(903) 583-0083</li>
-                <li>bonhamdiscount@gmail.com</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="border-t border-blue-800 px-4 py-6 text-center">
+        <div className="px-4 py-8 text-center">
           <p className="text-sm text-gray-400">© 2025 Bonham Discount Tire and Auto. All rights reserved.</p>
-          <div className="mt-4 flex justify-center">
-            <a href="https://daqworks.app" target="_blank" rel="noopener noreferrer" style={{ opacity: 0.8 }}>
+          <div className="mt-5 flex justify-center">
+            <a href="https://daqworks.app" target="_blank" rel="noopener noreferrer" style={{ opacity: 0.85, transform: 'scale(1.8)', transformOrigin: 'center' }}>
               <DaqWorksLogo variant="powered-by" theme="dark" />
             </a>
           </div>
