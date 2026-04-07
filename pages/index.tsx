@@ -59,7 +59,10 @@ export default function Home() {
 
       {/* ── STICKY NAV ──────────────────────────────────── */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-4 py-3 md:px-6" style={{ backgroundColor: '#1a3a6b' }}>
-        <Image src="/images/logo.png" height={52} width={120} alt="Bonham Discount Tire and Auto" />
+        <div className="flex items-center gap-3">
+          <Image src="/images/logo.png" height={52} width={120} alt="Bonham Discount Tire and Auto" />
+          <span className="text-lg font-bold tracking-wide text-white md:text-xl">Bonham Discount Tire and Auto</span>
+        </div>
         <div className="flex items-center gap-3">
           <a href="tel:9035830083" className="hidden text-lg font-bold md:inline" style={{ color: '#f5c518' }}>
             (903) 583-0083
