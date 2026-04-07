@@ -1,14 +1,30 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import DaqWorksLogo from '../components/DaqWorksLogo'
 
 const services = [
-  { emoji: '🔧', title: 'New & Used Tires', desc: 'Budget-friendly to premium brands. New and used options in stock.' },
+  { emoji: '🔧', title: 'New & Used Tires', desc: 'Budget-friendly to premium brands. New and used options always in stock.' },
   { emoji: '⚙️', title: 'Wheel Alignment', desc: 'Precision alignment to extend tire life and improve handling.' },
   { emoji: '🛢️', title: 'Oil Change', desc: 'Starting at $24.99. Synthetic blend, full synthetic, and diesel options.' },
   { emoji: '🛑', title: 'Brakes', desc: 'Full brake inspection, pad replacement, and rotor service.' },
   { emoji: '❄️', title: 'A/C Service', desc: 'Diagnosis and repair to keep you cool all summer long.' },
   { emoji: '🚗', title: 'Custom Wheels', desc: 'Custom wheel packages and lifted truck builds.' },
+  { emoji: '🔋', title: 'Batteries', desc: 'Testing, replacement, and installation for all makes and models.' },
+  { emoji: '💨', title: 'Exhaust & Muffler', desc: 'Full exhaust system repair, muffler replacement, and catalytic converters.' },
+  { emoji: '🔩', title: 'Suspension & Steering', desc: 'Shocks, struts, ball joints, and tie rods to restore your ride.' },
+  { emoji: '🛞', title: 'Tire Repair & Rotation', desc: 'Flat fixes, plugs, patches, and scheduled rotations to maximize tire life.' },
+  { emoji: '🚙', title: 'Lift Kits & Leveling', desc: 'Truck and Jeep lift kits installed by experienced technicians.' },
+  { emoji: '🔍', title: 'Diagnostics', desc: 'Check engine lights, electrical issues, and full vehicle inspections.' },
+]
+
+const reviews = [
+  { name: 'James R.', stars: 5, text: 'Best tire shop in Bonham, hands down. Fair prices and they got me in and out in under an hour. Highly recommend!' },
+  { name: 'Maria G.', stars: 5, text: 'Took my truck in for an alignment and new tires. The staff was super friendly and the work was done right. Will definitely be back.' },
+  { name: 'David W.', stars: 5, text: 'Great prices on used tires. They had exactly what I needed and mounted them while I waited. Honest people.' },
+  { name: 'Sarah T.', stars: 5, text: 'My A/C went out in the middle of July. They diagnosed it same day and had it blowing cold by the afternoon. Lifesavers!' },
+  { name: 'Robert L.', stars: 4, text: 'Good selection of tires and fair pricing. They were upfront about everything and didn\'t try to upsell me. Solid shop.' },
+  { name: 'Ashley M.', stars: 5, text: 'I\'ve been coming here for years. They always take care of my family\'s vehicles. Trustworthy and affordable.' },
 ]
 
 const hours = [
@@ -22,6 +38,15 @@ const trustItems = ['4.8 ★ Google Rating', '68 Reviews', 'Foreign & Domestic',
 const MAPS_URL = 'https://maps.google.com/?q=1603+N+Center+St+Bonham+TX+75418'
 
 export default function Home() {
+  const [activeReview, setActiveReview] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveReview((prev) => (prev + 1) % reviews.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <>
       <Head>
@@ -33,31 +58,50 @@ export default function Home() {
       </Head>
 
       {/* ── STICKY NAV ──────────────────────────────────── */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-3" style={{ backgroundColor: '#1a3a6b' }}>
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-4 py-3 md:px-6" style={{ backgroundColor: '#1a3a6b' }}>
         <Image src="/images/logo.png" height={52} width={120} alt="Bonham Discount Tire and Auto" />
-        <a href="tel:9035830083" className="text-lg font-bold" style={{ color: '#f5c518' }}>
-          (903) 583-0083
-        </a>
+        <div className="flex items-center gap-3">
+          <a href="tel:9035830083" className="hidden text-lg font-bold md:inline" style={{ color: '#f5c518' }}>
+            (903) 583-0083
+          </a>
+          <a
+            href="tel:9035830083"
+            className="rounded-full px-5 py-2 text-sm font-bold text-black md:px-6 md:text-base"
+            style={{ backgroundColor: '#f5c518' }}
+          >
+            Call Now
+          </a>
+          <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-full border-2 border-white px-5 py-2 text-sm font-bold text-white sm:inline-block md:px-6 md:text-base"
+          >
+            Get Directions
+          </a>
+        </div>
       </nav>
 
-      {/* ── HERO ────────────────────────────────────────── */}
+      {/* ── HERO WITH SERVICES OVERLAY ──────────────────── */}
       <section
-        className="relative flex min-h-screen items-center justify-center"
+        className="relative flex flex-col items-center justify-center px-4 py-20 md:py-28"
         style={{
           backgroundImage: "url('/images/full-building.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 mx-auto max-w-3xl px-4 text-center">
+        <div className="absolute inset-0 bg-black/65" />
+
+        {/* Headline */}
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
           <h1 className="text-4xl font-bold text-white drop-shadow md:text-6xl">
             Bonham&#39;s Trusted Tire &amp; Auto Shop
           </h1>
-          <p className="mt-4 text-xl" style={{ color: '#f5c518' }}>
-            Foreign &amp; Domestic · Bonham, TX
+          <p className="mt-3 text-xl" style={{ color: '#f5c518' }}>
+            Your One-Stop Shop · Foreign &amp; Domestic · Bonham, TX
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
             <a
               href="tel:9035830083"
               className="rounded-full px-8 py-4 text-lg font-bold text-black"
@@ -75,6 +119,20 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        {/* Services overlay grid */}
+        <div className="relative z-10 mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="rounded-xl bg-white/10 px-3 py-4 text-center backdrop-blur-sm transition-colors hover:bg-white/20"
+            >
+              <div className="mb-2 text-3xl">{s.emoji}</div>
+              <h3 className="text-sm font-bold text-white">{s.title}</h3>
+              <p className="mt-1 text-xs leading-snug text-gray-300">{s.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* ── TRUST BAR ───────────────────────────────────── */}
@@ -87,12 +145,15 @@ export default function Home() {
         ))}
       </section>
 
-      {/* ── SERVICES GRID ───────────────────────────────── */}
+      {/* ── SERVICES GRID (detailed) ────────────────────── */}
       <section className="bg-white px-4 py-16">
-        <h2 className="mb-12 text-center text-3xl font-bold" style={{ color: '#1a3a6b' }}>
+        <h2 className="mb-4 text-center text-3xl font-bold" style={{ color: '#1a3a6b' }}>
           Everything Your Vehicle Needs
         </h2>
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 md:grid-cols-3">
+        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
+          From tires and brakes to A/C and lift kits — we handle it all under one roof so you don&#39;t have to drive all over town.
+        </p>
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
           {services.map((s) => (
             <div
               key={s.title}
@@ -111,6 +172,45 @@ export default function Home() {
         <img src="/images/bronco-tires.png" alt="Bronco with new tires" className="h-64 w-1/3 object-cover" />
         <img src="/images/vintage-ford.png" alt="Vintage Ford" className="h-64 w-1/3 object-cover" />
         <img src="/images/summer-bays.png" alt="Summer service bays" className="h-64 w-1/3 object-cover" />
+      </section>
+
+      {/* ── CUSTOMER REVIEWS ────────────────────────────── */}
+      <section className="px-4 py-16" style={{ backgroundColor: '#f9fafb' }}>
+        <h2 className="mb-2 text-center text-3xl font-bold" style={{ color: '#1a3a6b' }}>
+          What Our Customers Say
+        </h2>
+        <p className="mx-auto mb-10 text-center text-sm text-gray-500">
+          4.8 ★ on Google · 68 Reviews
+        </p>
+
+        {/* Review card */}
+        <div className="mx-auto max-w-2xl">
+          <div className="rounded-2xl bg-white px-8 py-8 shadow-lg">
+            <div className="mb-3 text-2xl" style={{ color: '#f5c518' }}>
+              {'★'.repeat(reviews[activeReview].stars)}
+              {'☆'.repeat(5 - reviews[activeReview].stars)}
+            </div>
+            <p className="mb-4 text-lg leading-relaxed text-gray-700">
+              &#34;{reviews[activeReview].text}&#34;
+            </p>
+            <p className="font-bold text-gray-900">— {reviews[activeReview].name}</p>
+          </div>
+
+          {/* Dots */}
+          <div className="mt-6 flex justify-center gap-2">
+            {reviews.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveReview(i)}
+                className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                  i === activeReview ? 'scale-110' : 'bg-gray-300'
+                }`}
+                style={i === activeReview ? { backgroundColor: '#1a3a6b' } : undefined}
+                aria-label={`Show review ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ── FINANCING ───────────────────────────────────── */}
@@ -200,6 +300,11 @@ export default function Home() {
                 <li>Brakes</li>
                 <li>A/C Service</li>
                 <li>Custom Wheels</li>
+                <li>Batteries</li>
+                <li>Exhaust &amp; Muffler</li>
+                <li>Suspension</li>
+                <li>Lift Kits</li>
+                <li>Diagnostics</li>
               </ul>
             </div>
             <div>
