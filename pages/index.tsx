@@ -6,7 +6,7 @@ import DaqWorksLogo from '../components/DaqWorksLogo'
 const services = [
   { emoji: '🛞', title: 'Tires & Wheels', desc: 'New & used tires, custom wheels, mounting, balancing, rotation, flat repair, and alignment.' },
   { emoji: '🔧', title: 'Engine & Performance', desc: 'Engine replacement, rebuilds, tune-ups, timing belts, spark plugs, and fuel system service.' },
-  { emoji: '🛢️', title: 'Oil & Fluid Service', desc: 'Oil changes from $24.99. Transmission fluid, coolant flushes, power steering, and brake fluid.' },
+  { emoji: '🛢️', title: 'Oil & Fluid Service', desc: 'Oil changes, transmission fluid, coolant flushes, power steering, and brake fluid.' },
   { emoji: '🛑', title: 'Brakes & Safety', desc: 'Pads, rotors, calipers, brake lines, and complete brake system overhauls.' },
   { emoji: '❄️', title: 'A/C & Heating', desc: 'Compressor replacement, recharge, heater cores, blend doors, and full climate system repair.' },
   { emoji: '🌡️', title: 'Cooling System', desc: 'Radiators, water pumps, thermostats, hoses, and overheating diagnosis.' },
