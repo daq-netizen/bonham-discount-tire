@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hours &amp; Service Area — {{BUSINESS_NAME}}</title>
+<meta name="description" content="{{BUSINESS_NAME}} serves {{REGION}}. Call {{PHONE}}.">
+<link rel="canonical" href="https://{{DOMAIN}}/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{{SCHEMA_JSON}}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="wordmark" href="/">{{BUSINESS_NAME}}</a>
+  <nav aria-label="Main">
+    <a href="services.html">Services</a>
+    <a href="contact.html" aria-current="page">Visit</a>
+    <a class="topbar-call" href="{{PHONE_HREF}}">{{PHONE}}</a>
+  </nav>
+</header>
+<div class="hazard" aria-hidden="true"></div>
+
+<main id="main">
+
+  <section class="page-head">
+    <p class="eyebrow">{{REGION}}</p>
+    <h1>Hours &amp; service area</h1>
+  </section>
+
+  <section class="hero hero-contact">
+    <div class="hero-copy">
+      <h2 class="stack-head">{{LOCATION_HEAD}}</h2>
+      {{LOCATION_BLOCK}}
+
+      <h2 class="stack-head">Reach us</h2>
+      <p class="contact-line"><a href="{{PHONE_HREF}}">{{PHONE}}</a></p>
+      {{EMAIL_BLOCK}}
+
+      <div class="btn-row">
+        <a class="btn btn-call" href="{{PHONE_HREF}}">Call {{PHONE}}</a>
+        {{DIRECTIONS_BTN}}
+      </div>
+    </div>
+
+    <aside class="placard" aria-labelledby="placard-title">
+      <h2 id="placard-title" class="placard-head">
+        <span class="dot" data-status-dot aria-hidden="true"></span>
+        <span data-status-text>{{HOURS_SUMMARY}}</span>
+      </h2>
+      <p class="placard-now" data-status-detail>{{ADDRESS_LOCALITY}}</p>
+      <table class="hours">
+        <caption class="sr-only">Opening hours</caption>
+        <tbody>
+{{HOURS_ROWS}}
+        </tbody>
+      </table>
+      {{REVIEW_BLOCK}}
+    </aside>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>{{BUSINESS_NAME}} &middot; {{ADDRESS_ONELINE}} &middot; <a href="{{PHONE_HREF}}">{{PHONE}}</a></p>
+  <p class="foot-fine">&copy; {{YEAR}} {{BUSINESS_NAME}}</p>
+  {{BUILT_BY}}
+</footer>
+
+<script>
+(function () {
+  var HOURS = {{HOURS_JSON}};
+  var KEYS = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+
+  function mins(hhmm) {
+    var p = hhmm.split(":");
+    return parseInt(p[0], 10) * 60 + parseInt(p[1], 10);
+  }
+  function label(hhmm) {
+    var p = hhmm.split(":"), h = parseInt(p[0], 10);
+    var period = h >= 12 ? "PM" : "AM";
+    return (h % 12 === 0 ? 12 : h % 12) + ":" + p[1] + " " + period;
+  }
+
+  var now = new Date();
+  var key = KEYS[now.getDay()];
+  var today = HOURS[key];
+  var nowMins = now.getHours() * 60 + now.getMinutes();
+
+  var row = document.querySelector('tr[data-day="' + key + '"]');
+  if (row) row.classList.add("is-today");
+
+  var dot = document.querySelector("[data-status-dot]");
+  var text = document.querySelector("[data-status-text]");
+  var detail = document.querySelector("[data-status-detail]");
+  if (!dot || !text || !detail) return;
+
+  var open = today && nowMins >= mins(today.open) && nowMins < mins(today.close);
+
+  dot.classList.add(open ? "is-open" : "is-shut");
+  text.textContent = open ? "Open now" : "Closed now";
+
+  if (open) {
+    detail.textContent = "Closes at " + label(today.close);
+  } else {
+    var next = null;
+    for (var i = today && nowMins < mins(today.open) ? 0 : 1; i <= 7; i++) {
+      var k = KEYS[(now.getDay() + i) % 7];
+      if (HOURS[k]) { next = { day: k, at: HOURS[k].open, offset: i }; break; }
+    }
+    if (!next) detail.textContent = "Call for hours";
+    else if (next.offset === 0) detail.textContent = "Opens at " + label(next.at);
+    else if (next.offset === 1) detail.textContent = "Opens tomorrow at " + label(next.at);
+    else detail.textContent = "Opens " + next.day.charAt(0).toUpperCase() + next.day.slice(1) + " at " + label(next.at);
+  }
+})();
+</script>
+
+</body>
+</html>

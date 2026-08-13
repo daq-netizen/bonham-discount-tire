@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — {{BUSINESS_NAME}} in {{CITY}}</title>
+<meta name="description" content="{{SERVICES_INLINE}} — {{BUSINESS_NAME}}, serving {{REGION}}.">
+<link rel="canonical" href="https://{{DOMAIN}}/services.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{{SCHEMA_JSON}}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="wordmark" href="/">{{BUSINESS_NAME}}</a>
+  <nav aria-label="Main">
+    <a href="services.html" aria-current="page">Services</a>
+    <a href="contact.html">Visit</a>
+    <a class="topbar-call" href="{{PHONE_HREF}}">{{PHONE}}</a>
+  </nav>
+</header>
+<div class="hazard" aria-hidden="true"></div>
+
+<main id="main">
+
+  <section class="page-head">
+    <p class="eyebrow">{{TRADE}}</p>
+    <h1>Services</h1>
+    <p class="lede">{{DESCRIPTION}}</p>
+  </section>
+
+  <section class="band">
+    <ul class="services services-full">
+{{SERVICES_CARDS}}
+    </ul>
+  </section>
+
+  <section class="band band-quiet">
+    <h2>Not sure what you need?</h2>
+    <p class="lede">Call and describe what the vehicle is doing. We'll tell you what it likely needs before we come out.</p>
+    <div class="btn-row">
+      <a class="btn btn-call" href="{{PHONE_HREF}}">Call {{PHONE}}</a>
+      <a class="btn btn-quiet" href="contact.html">Hours &amp; service area</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>{{BUSINESS_NAME}} &middot; {{ADDRESS_ONELINE}} &middot; <a href="{{PHONE_HREF}}">{{PHONE}}</a></p>
+  <p class="foot-fine">&copy; {{YEAR}} {{BUSINESS_NAME}}</p>
+  {{BUILT_BY}}
+</footer>
+
+</body>
+</html>

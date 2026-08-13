@@ -1,0 +1,207 @@
+{
+  "slug": "honest-mobile-mechanics",
+  "business": {
+    "name": "Honest Mobile Mechanics",
+    "trade": "Mobile auto repair",
+    "schemaType": "AutoRepair",
+    "serviceAreaBusiness": true,
+    "tagline": "We come to you.",
+    "description": "Driveway, office lot, or the shoulder where it quit \u2014 we bring the shop to the vehicle. You get told what's wrong and what it costs before a wrench moves."
+  },
+  "contact": {
+    "phone": "(615) 642-7461",
+    "email": "service@honestmobilemechanicstexas.com",
+    "address": {
+      "street": "",
+      "city": "Royse City",
+      "state": "TX",
+      "zip": "75189"
+    },
+    "mapUrl": "",
+    "geo": {
+      "lat": null,
+      "lng": null
+    }
+  },
+  "hours": {
+    "monday": "24h",
+    "tuesday": "24h",
+    "wednesday": "24h",
+    "thursday": "24h",
+    "friday": "24h",
+    "saturday": "24h",
+    "sunday": "24h"
+  },
+  "services": [
+    {
+      "name": "Mobile diagnostics",
+      "featured": true,
+      "price": "$149.99",
+      "detail": "We drive out, scan the vehicle and tell you what's actually wrong before any work is approved."
+    },
+    {
+      "name": "Brake service",
+      "featured": true,
+      "detail": "Pads, rotors, calipers and fluid. Done in your driveway or your work lot."
+    },
+    {
+      "name": "Battery, starter & alternator",
+      "detail": "No-start diagnosis and replacement on site. The most common reason people call us."
+    },
+    {
+      "name": "Oil changes & maintenance",
+      "detail": "Conventional through full synthetic, filters and fluids, on your schedule not a shop's."
+    },
+    {
+      "name": "Engine replacement",
+      "featured": true,
+      "detail": "Full engine replacement, handled end to end."
+    },
+    {
+      "name": "Transmission replacement",
+      "featured": true,
+      "detail": "Transmission removal and replacement on most makes."
+    },
+    {
+      "name": "Suspension & steering",
+      "detail": "Struts, shocks, control arms, tie rods and wheel bearings."
+    },
+    {
+      "name": "Cooling system",
+      "detail": "Radiators, water pumps, thermostats and hoses before an overheat becomes an engine."
+    },
+    {
+      "name": "Electrical & sensors",
+      "detail": "Check-engine diagnosis, wiring faults, sensors and drivability troubleshooting."
+    },
+    {
+      "name": "Belts, hoses & pulleys",
+      "detail": "Serpentine belts, timing components, tensioners and hose replacement."
+    },
+    {
+      "name": "Body repair",
+      "detail": "Collision and cosmetic panel work."
+    },
+    {
+      "name": "Pre-purchase inspection",
+      "tag": "Mobile only",
+      "detail": "Buying used? We meet you at the seller and inspect it before money changes hands. A shop can't do this."
+    },
+    {
+      "name": "State inspection runs",
+      "tag": "We handle the run",
+      "featured": true,
+      "detail": "We repair whatever failed, then take the vehicle in for its Texas inspection and bring it back. You never leave the house."
+    },
+    {
+      "name": "Tire service",
+      "tag": "We handle the run",
+      "detail": "Flats and rotations on site. For a full set we collect the vehicle, get them mounted and balanced, and return it."
+    }
+  ],
+  "areasServed": [
+    "Dallas",
+    "Fort Worth",
+    "Terrell",
+    "Forney",
+    "Rockwall",
+    "Royse City",
+    "Greenville",
+    "Garland",
+    "Mesquite",
+    "Plano",
+    "McKinney",
+    "Frisco",
+    "Denton",
+    "Aubrey"
+  ],
+  "reviews": {
+    "rating": "5.0",
+    "count": 61,
+    "url": ""
+  },
+  "google": {
+    "profileUrl": "",
+    "reviewUrl": "",
+    "placeId": ""
+  },
+  "site": {
+    "domain": "honestmobilemechanicstexas.com",
+    "accent": "#FF6A13",
+    "accentInk": "#15181C",
+    "builtBy": {
+      "label": "Powered by",
+      "name": "DAQ",
+      "nameAccent": "WORKS",
+      "url": "https://daqworks.app",
+      "svg": "<svg viewBox=\"0 0 54 80\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"7\" height=\"80\" rx=\"3.5\" fill=\"currentColor\" opacity=\"1\"/><rect x=\"9\" y=\"28\" width=\"7\" height=\"52\" rx=\"3.5\" fill=\"currentColor\" opacity=\"0.6\"/><rect x=\"18\" y=\"55\" width=\"7\" height=\"25\" rx=\"3.5\" fill=\"currentColor\" opacity=\"0.3\"/><rect x=\"29\" y=\"57\" width=\"7\" height=\"23\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"0.3\"/><rect x=\"38\" y=\"28\" width=\"7\" height=\"52\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"0.65\"/><rect x=\"47\" y=\"0\" width=\"7\" height=\"80\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"1\"/></svg>"
+    }
+  },
+  "media": {
+    "hero": "assets/hero.jpg",
+    "logo": "",
+    "gallery": []
+  },
+  "process": [
+    {
+      "title": "Tell us what it's doing",
+      "detail": "Describe the noise, the light, the way it drives. We'll tell you what it likely is and what it'll run before anyone gets in a truck."
+    },
+    {
+      "title": "We drive out",
+      "detail": "Home, work, or the shoulder of the highway at 2am. No tow bill, no rental car, no morning spent in a waiting room."
+    },
+    {
+      "title": "Fixed where it sits",
+      "detail": "Most jobs finish in one visit. If it needs an inspection or a set of tires, we take it in and bring it back."
+    }
+  ],
+  "trustPoints": [
+    {
+      "title": "You never lose a day",
+      "detail": "No drop-off, no shuttle ride, no arranging a pickup. The work happens where the car already is."
+    },
+    {
+      "title": "We do the running",
+      "detail": "Inspections and tire fitting still need a facility. We take the vehicle, handle it, and return it."
+    },
+    {
+      "title": "The price comes first",
+      "detail": "You approve a number before work starts. Nothing gets added without a phone call."
+    },
+    {
+      "title": "Any hour, any day",
+      "detail": "A dead battery at midnight is still a dead battery. We answer at midnight."
+    },
+    {
+      "title": "You talk to the mechanic",
+      "detail": "No service advisor in the middle translating. The person quoting is the person turning the wrench."
+    },
+    {
+      "title": "Sixty-one people, five stars",
+      "detail": "A perfect rating across every customer who's left one. That's the whole record, not a highlight reel."
+    }
+  ],
+  "testimonials": [],
+  "chips": [
+    "Owner operated",
+    "Priced before we start",
+    "No tow required",
+    "5.0 on Google"
+  ],
+  "coverage": {
+    "region": "DFW metroplex",
+    "short": "DFW",
+    "summary": "Most shops make you come to them, then keep your car for three days. We work the whole metroplex \u2014 the close-in suburbs and the small towns on the edge that nobody else wants to drive to.",
+    "note": "These are where we run most weeks, not a fence line. Give us your address and we'll tell you straight whether we can reach you."
+  },
+  "cta": {
+    "title": "Sitting somewhere it shouldn't be?",
+    "body": "Tell us where it is and what it's doing. We'll tell you what it needs and what it costs \u2014 then drive out."
+  },
+  "headings": {
+    "services": "Everything a shop does, minus the shop",
+    "process": "Three steps, no waiting room",
+    "trust": "Why people call back"
+  }
+}

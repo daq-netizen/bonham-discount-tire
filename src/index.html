@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{BUSINESS_NAME}} — {{TRADE}} in {{CITY}}, TX</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="https://{{DOMAIN}}/">
+<meta property="og:title" content="{{BUSINESS_NAME}} — {{TRADE}} in {{CITY}}, TX">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{{SCHEMA_JSON}}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="wordmark" href="/">{{LOGO_BLOCK}}<span class="wordmark-text">{{BUSINESS_NAME}}<em>{{CITY}}, TX</em></span></a>
+  <nav aria-label="Main">
+    <a href="services.html">Services</a>
+    <a href="contact.html">Hours</a>
+    <a class="topbar-call" href="{{PHONE_HREF}}">{{PHONE}}</a>
+  </nav>
+</header>
+<div class="hazard" aria-hidden="true"></div>
+
+<main id="main">
+
+  <section class="hero"{{HERO_BG}}>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{{TRADE}} &middot; {{REGION}}</p>
+        <h1>{{TAGLINE}}</h1>
+        <p class="hero-services">{{SERVICES_LINE}}</p>
+        <p class="lede">{{DESCRIPTION}}</p>
+
+        <div class="btn-row">
+          <a class="btn btn-call" href="{{PHONE_HREF}}">Call now</a>
+          {{HERO_SECONDARY}}
+        </div>
+
+        {{CHIPS}}
+      </div>
+
+      <aside class="hero-badge">
+        <p class="hero-badge-l">
+          <span class="dot" data-status-dot aria-hidden="true"></span>
+          <span data-status-text>{{HOURS_SUMMARY}}</span>
+        </p>
+        <p class="hero-badge-v" data-status-detail>{{ADDRESS_LOCALITY}}</p>
+        <p class="hero-badge-note">{{HERO_BADGE_NOTE}}</p>
+      </aside>
+    </div>
+
+    <div class="hero-cards">
+{{HERO_CARDS}}
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="services-title">
+    <p class="kicker">Services</p>
+    <h2 id="services-title">{{SERVICES_HEAD}}</h2>
+    <ul class="services">
+{{SERVICES_CARDS}}
+    </ul>
+    <p class="band-more"><a href="services.html">Full service list</a></p>
+  </section>
+
+{{PROCESS_SECTION}}
+
+{{TRUST_SECTION}}
+
+{{GALLERY_SECTION}}
+
+{{TESTIMONIALS_SECTION}}
+
+{{CALLOUT_SECTION}}
+
+  <section class="band band-quiet" aria-labelledby="area-title">
+    <p class="kicker">Coverage</p>
+    <h2 id="area-title">{{LOCATION_HEAD}}</h2>
+      {{LOCATION_BLOCK}}
+  </section>
+
+{{CTA_SECTION}}
+
+</main>
+
+<footer class="foot">
+  <p>{{BUSINESS_NAME}} &middot; {{ADDRESS_ONELINE}} &middot; <a href="{{PHONE_HREF}}">{{PHONE}}</a></p>
+  <p class="foot-fine">&copy; {{YEAR}} {{BUSINESS_NAME}}</p>
+  {{BUILT_BY}}
+</footer>
+
+<a class="callbar" href="{{PHONE_HREF}}">Call now &middot; {{PHONE}}</a>
+
+<script>
+(function () {
+  var HOURS = {{HOURS_JSON}};
+  var KEYS = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+  function mins(t){var p=t.split(":");return parseInt(p[0],10)*60+parseInt(p[1],10);}
+  function label(t){var p=t.split(":"),h=parseInt(p[0],10);return (h%12===0?12:h%12)+":"+p[1]+" "+(h>=12?"PM":"AM");}
+
+  var now=new Date(), key=KEYS[now.getDay()], today=HOURS[key];
+  var nowMins=now.getHours()*60+now.getMinutes();
+  var row=document.querySelector('tr[data-day="'+key+'"]'); if(row) row.classList.add("is-today");
+
+  var dot=document.querySelector("[data-status-dot]"),
+      text=document.querySelector("[data-status-text]"),
+      detail=document.querySelector("[data-status-detail]");
+  if(!dot||!text||!detail) return;
+
+  var always = today && today.always;
+  var open = always || (today && nowMins>=mins(today.open) && nowMins<mins(today.close));
+
+  dot.classList.add(open?"is-open":"is-shut");
+  text.textContent = always ? "Open 24 hours" : (open ? "Open now" : "Closed now");
+
+  if (always) { detail.textContent = "Call any time"; return; }
+  if (open) { detail.textContent = "Closes at "+label(today.close); return; }
+
+  var next=null;
+  for(var i=(today&&nowMins<mins(today.open))?0:1;i<=7;i++){
+    var k=KEYS[(now.getDay()+i)%7];
+    if(HOURS[k]){next={day:k,at:HOURS[k].open,offset:i};break;}
+  }
+  if(!next) detail.textContent="Call for hours";
+  else if(next.offset===0) detail.textContent="Opens at "+label(next.at);
+  else if(next.offset===1) detail.textContent="Opens tomorrow at "+label(next.at);
+  else detail.textContent="Opens "+next.day.charAt(0).toUpperCase()+next.day.slice(1)+" at "+label(next.at);
+})();
+</script>
+
+</body>
+</html>
