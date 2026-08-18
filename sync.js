@@ -122,6 +122,8 @@ const hoursRows = DAYS.map(([key, short]) => {
 // Inline stroke icons, 24x24, currentColor. Keyword-matched to service names so
 // every card gets a mark — mixed photo/no-photo cards read as broken.
 const ICON = {
+  spark: '<path d="M12 2.5v5M12 21.5v-3.5"/><rect x="9.5" y="7.5" width="5" height="4" rx="1"/><path d="M9.5 11.5h5l-.8 3.5h-3.4z"/><path d="M10.7 15h2.6v3h-2.6z"/><path d="M8 9.5H6M16 9.5h2"/>',
+  speed: '<path d="M3.5 18a9 9 0 1 1 17 0"/><path d="M12 12l4.5-3.5"/><circle cx="12" cy="15" r="1.6"/><path d="M6.2 11.2l1 1M12 7.5v1.4M17.8 11.2l-1 1"/>',
   tire: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/>',
   brake: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v3M18.5 8.5l-2.6 1.5M18.5 15.5l-2.6-1.5M12 20v-3M5.5 15.5l2.6-1.5M5.5 8.5l2.6 1.5"/>',
   engine: '<path d="M5 10h3l2-2h5l2 2h2v6h-2l-2 2h-5l-2-2H5z"/><path d="M9 6h5M11.5 6v2M19 12h2"/>',
@@ -140,16 +142,25 @@ const ICON = {
   wrench: '<path d="M15.5 3.5a5.5 5.5 0 0 0-5 8.2L3.5 18.7l1.8 1.8 7-7A5.5 5.5 0 1 0 15.5 3.5z"/><path d="M15.5 3.5l-2.5 2.5 2.5 2.5L18 6z"/>',
   clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.5l3.5 2"/>',
   battery: '<rect x="2.5" y="7.5" width="15" height="10" rx="1.5"/><path d="M17.5 11h3.5v3h-3.5"/><path d="M6.5 5.5h3M13 5.5h3M6.5 12.5h4M8.5 10.5v4"/>',
+  lift: '<path d="M3 20h18"/><path d="M7 20v-5M17 20v-5"/><path d="M5 15h14l-1.5-5.5a2 2 0 0 0-2-1.5h-7a2 2 0 0 0-2 1.5z"/><path d="M12 8V3M9.5 5.5L12 3l2.5 2.5"/>',
+  tirestack: '<ellipse cx="12" cy="6.5" rx="7.5" ry="3"/><path d="M4.5 6.5v4c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-4"/><path d="M4.5 13v4c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-4"/>',
+  patch: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/><path d="M17.5 6.5l-3.5 3.5M6.5 17.5l3.5-3.5"/><path d="M19 3l2 2M20 3l-1 1"/>',
+  filter: '<path d="M3.5 5h17l-6.5 7.5V20l-4-2.5v-5z"/>',
   belt: '<circle cx="7" cy="9" r="3.5"/><circle cx="16.5" cy="15" r="4.5"/><path d="M8.6 6l7-1.5M4.2 11.4l1.5 6.6"/>'
 };
 const ICON_MAP = [
-  [/tire|wheel/i, "tire"], [/brake/i, "brake"], [/engine|performance/i, "engine"],
+  [/tune.?up|spark|plug|ignition/i, "spark"],
+  [/exotic|performance|luxur/i, "speed"],
+  [/lift|custom wheel|off-road|build/i, "lift"],
+  [/used tire/i, "tirestack"], [/tire repair|patch|plug/i, "patch"],
+  [/filter/i, "filter"],
+  [/tire|wheel/i, "tire"], [/brake/i, "brake"], [/engine/i, "engine"],
   [/oil|fluid|maintenance/i, "oil"], [/a\/c|air|heating/i, "ac"], [/cool|radiator/i, "cooling"],
   [/transmission/i, "transmission"], [/belt|hose|pulley/i, "belt"],
-  [/suspension|steering/i, "suspension"],
+  [/suspension|steering|shock|strut/i, "suspension"],
   [/exhaust|emission/i, "exhaust"], [/batter|starter|alternator/i, "battery"],
   [/electric|sensor|wiring/i, "electrical"],
-  [/pre-purchase|purchase/i, "search"], [/diagnos/i, "diagnostic"],
+ [/pre-purchase|purchase/i, "search"], [/diagnos/i, "diagnostic"],
   [/truck|off-road/i, "truck"], [/body|collision/i, "body"],
   [/inspection/i, "clipboard"], [/24|hour/i, "clock"]
 ];
@@ -160,18 +171,33 @@ const iconFor = (name) => {
 
 const H = c.headings || {};
 
+const navFor = (hasProcess, hasTrust, hasGallery, hasQuotes) => {
+  const items = [["#services", "Services"]];
+  if (hasProcess) items.push(["#process", "How it works"]);
+  if (hasTrust) items.push(["#trust", "Why us"]);
+  if (hasGallery) items.push(["#gallery", "Gallery"]);
+  if (hasQuotes) items.push(["#reviews", "Reviews"]);
+  items.push(["#location", "Location"]);
+  return items.map(([h, l]) => `<a href="${h}">${l}</a>`).join("\n    ");
+};
+
 const servicesCards = c.services
   .map((s) => {
     const price = s.price ? `\n            <p class="service-price">${esc(s.price)}</p>` : "";
     const tag = s.tag ? `<span class="service-tag">${esc(s.tag)}</span>` : "";
-    return `        <li class="service">
+    const inc = Array.isArray(s.includes) && s.includes.length
+      ? `\n          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul>${s.includes
+          .map((x) => `<li>${esc(x)}</li>`)
+          .join("")}</ul></div>`
+      : "";
+    return `        <li class="service${inc ? " has-pop" : ""}"${inc ? ' tabindex="0"' : ""}>
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${iconFor(
             s.name
           )}</svg></span>
           <div class="service-body">
             ${tag}<h3>${esc(s.name)}</h3>
             <p>${esc(s.detail || "")}</p>${price}
-          </div>
+          </div>${inc}
         </li>`;
   })
   .join("\n");
@@ -233,7 +259,7 @@ const heroImage = hasFile(media.hero)
 const heroClass = " has-media";
 
 const processSteps = Array.isArray(c.process) && c.process.length
-  ? `  <section class="band band-process" aria-labelledby="process-title">
+  ? `  <section class="band band-process" id="process" aria-labelledby="process-title">
     <h2 id="process-title">${esc(H.process || "Three steps, no waiting room")}</h2>
     <ol class="process">
 ${c.process
@@ -250,7 +276,7 @@ ${c.process
   : "";
 
 const trustPoints = Array.isArray(c.trustPoints) && c.trustPoints.length
-  ? `  <section class="band band-quiet" aria-labelledby="trust-title">
+  ? `  <section class="band band-quiet" id="trust" aria-labelledby="trust-title">
     <h2 id="trust-title">${esc(H.trust || "Why people call back")}</h2>
     <ul class="trust">
 ${c.trustPoints.map((t) => `        <li><h3>${esc(t.title)}</h3><p>${esc(t.detail || "")}</p></li>`).join("\n")}
@@ -260,9 +286,11 @@ ${c.trustPoints.map((t) => `        <li><h3>${esc(t.title)}</h3><p>${esc(t.detai
 
 // Real quotes only. Never generate these — they are customer statements.
 const testimonials = Array.isArray(c.testimonials) && c.testimonials.length
-  ? `  <section class="band band-reviews" aria-labelledby="reviews-title">
+  ? `  <section class="band band-reviews" id="reviews" aria-labelledby="reviews-title">
     <p class="kicker">Google reviews</p>
-    <h2 id="reviews-title">${r.rating ? `Rated ${esc(r.rating)} by local drivers` : "What customers say"}</h2>
+    <h2 id="reviews-title">${esc(H.reviews || (r.rating ? `Rated ${r.rating} by local drivers` : "What customers say"))}</h2>${
+      r.url ? `\n    <p class="reviews-link"><a href="${esc(r.url)}" target="_blank" rel="noopener">Read more reviews on Google <span aria-hidden="true">&#8599;</span></a></p>` : ""
+    }
     <ul class="quotes">
 ${c.testimonials
   .map((t) => {
@@ -284,8 +312,11 @@ ${c.testimonials
 const isUrl = (v) => /^https?:\/\//.test(v || "");
 const usable = (v) => isUrl(v) || hasFile(v);
 
+// Priority: real logo file, then a generated mark, then text only.
 const logoBlock = usable(media.logo)
   ? `<img class="wordmark-logo" src="${esc(media.logo)}" alt="">`
+  : c.site && c.site.markSvg
+  ? `<span class="wordmark-mark" aria-hidden="true">${c.site.markSvg}</span>`
   : "";
 
 const chips = Array.isArray(c.chips) && c.chips.length
@@ -294,15 +325,28 @@ const chips = Array.isArray(c.chips) && c.chips.length
 
 const galleryItems = (media.gallery || []).filter((g) => hasFile(g.src));
 const gallery = galleryItems.length
-  ? `  <section class="band band-gallery" aria-labelledby="gallery-title">
-    <p class="kicker">${esc((media.galleryKicker) || "From the road")}</p>
-    <h2 id="gallery-title">${esc((media.galleryTitle) || "Real jobs, real driveways")}</h2>
+  ? `  <section class="band band-gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="gal-head">
+      <div>
+        <p class="kicker">${esc((media.galleryKicker) || "From the road")}</p>
+        <h2 id="gallery-title">${esc((media.galleryTitle) || "Real jobs, real driveways")}</h2>
+      </div>
+      <div class="gal-social">${
+        media.instagram
+          ? `\n        <a class="gal-ig" href="${esc(media.instagram)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a>`
+          : ""
+      }${
+        media.facebook
+          ? `\n        <a class="gal-ig" href="${esc(media.facebook)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6A21 21 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V13h2.7v8z"/></svg>Facebook</a>`
+          : ""
+      }
+      </div>
+    </div>
     <ul class="gallery">
 ${galleryItems
   .map(
     (g) => `        <li>
           <img src="${esc(g.src)}" alt="${esc(g.caption || "")}" loading="lazy">
-          <span>${esc(g.caption || "")}</span>
         </li>`
   )
   .join("\n")}
@@ -334,9 +378,9 @@ const builtBy = bb.name
 
 // Generic callout band — financing, warranty, seasonal offer, whatever the
 // client has. Renders only when present.
-const co = c.callout || {};
-const calloutBlock = co.title
-  ? `  <section class="band band-callout">
+const callouts = Array.isArray(c.callout) ? c.callout : c.callout ? [c.callout] : [];
+const calloutBlock = callouts.map((co) => co.title
+  ? `  <section class="band band-callout svc-grp">
     <div class="callout">
       <div>
         <p class="kicker">${esc(co.kicker || "")}</p>
@@ -347,7 +391,10 @@ const calloutBlock = co.title
       <a class="btn btn-call" href="${telHref}">${esc(co.action || "Call to ask")}</a>
     </div>
   </section>`
-  : "";
+  : "").join("\n\n");
+
+const storefront = usable(media.storefront) ? media.storefront : (usable(media.hero) ? media.hero : "");
+const mapQuery = encodeURIComponent(SAB ? `${addr.city}, ${addr.state}` : addressOneLine);
 
 const emailBlock = c.contact.email
   ? `<p class="contact-line contact-mail"><a href="mailto:${esc(c.contact.email)}">${esc(c.contact.email)}</a></p>`
@@ -397,7 +444,13 @@ if (!SAB && c.contact.geo && c.contact.geo.lat != null && c.contact.geo.lng != n
 const tokens = {
   BUSINESS_NAME: esc(c.business.name),
   TRADE: esc(c.business.trade),
-  TAGLINE: esc(c.business.tagline || ""),
+  TAGLINE: (() => {
+    const t = esc(c.business.tagline || "");
+    const a = c.business.taglineAccent;
+    if (!a) return t;
+    const ea = esc(a);
+    return t.replace(ea, `<em>${ea}</em>`);
+  })(),
   DESCRIPTION: esc(c.business.description || ""),
   PHONE: esc(c.contact.phone),
   PHONE_HREF: telHref,
@@ -433,10 +486,87 @@ const tokens = {
   TESTIMONIALS_SECTION: testimonials,
   LOGO_BLOCK: logoBlock,
   BUILT_BY: builtBy,
+  BRANDS_MODAL: (() => {
+    const b = c.brands || {};
+    const grp = (label, list) =>
+      Array.isArray(list) && list.length
+        ? `      <div class="brand-grp">
+        <p class="brand-h">${esc(label)}</p>
+        <ul class="brand-list">${list.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+      </div>`
+        : "";
+    const body = grp("Tires", b.tires) + "\n" + grp("Wheels", b.wheels);
+    if (!body.trim()) return "";
+    return `<div class="modal" id="brands-modal" hidden>
+  <div class="modal-scrim" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="brands-modal-t">
+    <button type="button" class="modal-x" data-close aria-label="Close">&#215;</button>
+    <p class="kicker">${esc(b.kicker || "Brands")}</p>
+    <h2 id="brands-modal-t">${esc(b.title || "Brands we fit")}</h2>
+    ${b.note ? `<p class="modal-note">${esc(b.note)}</p>` : ""}
+${body}
+  </div>
+</div>`;
+  })(),
   CALLOUT_SECTION: calloutBlock,
+  LOCATION_SECTION: `  <section class="band band-quiet" id="location">
+    <p class="kicker">${SAB ? "Coverage" : "Location"}</p>
+    <h2>${esc((c.coverage && c.coverage.heading) || (SAB ? "We go where shops won't" : "Where to find us"))}</h2>
+
+    <div class="loc-grid">
+      <div class="loc-card">
+        <h3>${esc(c.business.name)}</h3>
+        ${SAB ? "" : `<p class="loc-addr">${esc(addr.street)}<br>${esc(addressLocality)}</p>`}
+        <p class="loc-tel"><a href="${telHref}">${esc(c.contact.phone)}</a></p>
+        <table class="hours"><caption class="sr-only">Opening hours</caption><tbody>
+${hoursRows}
+        </tbody></table>
+        <div class="btn-row">
+          <a class="btn btn-call" href="${telHref}">${esc((c.cta && c.cta.action) || "Call now")}</a>
+          ${directionsBtn}
+        </div>
+      </div>
+      <div class="loc-media">
+        ${
+          (c.promise && c.promise.title)
+            ? `<div class="loc-promise">
+          <p class="loc-promise-h">${esc(c.promise.kicker || "Our promise")}</p>
+          <p class="loc-promise-t">${esc(c.promise.title)}</p>
+          ${c.promise.body ? `<p class="loc-promise-b">${esc(c.promise.body)}</p>` : ""}
+        </div>`
+            : ""
+        }
+        ${
+          (c.coverage && c.coverage.landmarks)
+            ? `<div class="loc-here">
+          <p class="loc-here-h">Getting here</p>
+          ${(c.coverage && c.coverage.summary) ? `<p class="loc-here-lede">${esc(c.coverage.summary)}</p>` : ""}
+          <ul>${c.coverage.landmarks.map((l) => `<li>${esc(l)}</li>`).join("")}</ul>
+        </div>`
+            : ""
+        }
+        ${storefront ? `<img src="${esc(storefront)}" alt="${esc(c.business.name)}" loading="lazy">` : ""}
+        <iframe class="loc-map" src="https://maps.google.com/maps?q=${mapQuery}&z=15&output=embed"
+                title="Map to ${esc(c.business.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    ${SAB ? `<p class="areas-note">${esc((c.coverage && c.coverage.note) || "")}</p>` : ""}
+  </section>`,
+  SECTION_NAV: navFor(!!processSteps, !!trustPoints, !!gallery, !!testimonials),
+  FAB: `<div class="fab" aria-hidden="false">
+  <a class="fab-btn" href="${telHref}" aria-label="Call ${esc(c.contact.phone)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg></a>${
+    SAB ? "" : `\n  <a class="fab-btn" href="${esc(mapUrl)}" target="_blank" rel="noopener" aria-label="Get directions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></a>`
+  }
+</div>`,
   CHIPS: chips,
   GALLERY_SECTION: gallery,
   STATS_STRIP: "",
+  BADGE_RATING: r.rating
+    ? `<p class="badge-rating"><span class="stars" aria-hidden="true">&#9733;</span><strong>${esc(r.rating)}</strong>${
+        r.count ? `<span>${esc(r.count)} Google reviews</span>` : ""
+      }</p>`
+    : "",
   HERO_CARDS: `      <div class="hcard">
         <span class="hcard-l">Google rating</span>
         <span class="hcard-v"><span class="hcard-star">&#9733;</span>${esc(r.rating || "")}<em>${r.count ? "/ " + esc(r.count) + " reviews" : ""}</em></span>
@@ -461,8 +591,54 @@ const tokens = {
     </div>
   </section>`,
   REVIEW_BLOCK: reviewBlock,
+  QUOTE_BTN: (c.form && c.form.endpoint)
+    ? `<button type="button" class="quote-btn" data-quote>${esc((c.form && c.form.label) || "Get a quote today")}</button>`
+    : "",
+  QUOTE_MODAL: (() => {
+    const f = c.form || {};
+    if (!f.endpoint) return "";
+    const opts = c.services.map((s) => `<option value="${esc(s.name)}">${esc(s.name)}</option>`).join("");
+    return `<div class="modal" id="quote-modal" hidden>
+  <div class="modal-scrim" data-close></div>
+  <div class="modal-box modal-sm" role="dialog" aria-modal="true" aria-labelledby="quote-t">
+    <button type="button" class="modal-x" data-close aria-label="Close">&#215;</button>
+    <p class="kicker">${esc(f.kicker || "Get a quote")}</p>
+    <h2 id="quote-t">${esc(f.title || "Tell us what you need")}</h2>
+    <div class="q-choice" data-q-choice>
+      <a class="btn btn-call" href="${telHref}">Call ${esc(c.contact.phone)}</a>
+      <button type="button" class="btn btn-ghost" data-q-start>Request a quote</button>
+    </div>
+    <form class="q-form" data-q-form hidden action="${esc(f.endpoint)}" method="POST">
+      <input type="hidden" name="_subject" value="${esc((f.subject || "Quote request") + " \u2014 " + c.business.name)}">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <p class="q-hint">Leave a phone number or an email &mdash; either one works.</p>
+      <div class="q-row">
+        <label>Phone<input type="tel" name="phone" autocomplete="tel" data-q-contact></label>
+        <label>Email<input type="email" name="email" autocomplete="email" data-q-contact></label>
+      </div>
+      <label>Service needed
+        <select name="service">${opts}<option value="Not sure">Not sure</option></select>
+      </label>
+      <div class="q-row q-row-3">
+        <label>Year<input type="text" name="year" inputmode="numeric" maxlength="4"></label>
+        <label>Make<input type="text" name="make"></label>
+        <label>Model<input type="text" name="model"></label>
+      </div>
+      <label>Anything else <span class="q-opt">optional</span>
+        <textarea name="message" rows="3"></textarea>
+      </label>
+      <p class="q-err" data-q-err hidden>Please add a phone number or an email so we can get back to you.</p>
+      <button type="submit" class="btn btn-call q-submit">Send request</button>
+    </form>
+  </div>
+</div>`;
+  })(),
   SCHEMA_JSON: JSON.stringify(schema, null, 2),
   ACCENT: (c.site && c.site.accent) || "#E8A317",
+  RADIUS: (c.site && c.site.radius) || "0px",
+  PILL: (c.site && c.site.radius) ? "999px" : "0px",
   INK: (c.site && c.site.ink) || "#121417",
   INK_2: (c.site && c.site.ink2) || "#1b1f24",
   INK_3: (c.site && c.site.ink3) || "#262c33",
@@ -502,7 +678,7 @@ if (c.contact.email && c.site && c.site.domain && !String(c.contact.email).endsW
   warn(`contact.email (${c.contact.email}) is not on ${c.site.domain} — confirm the branded address exists and forwards before launch.`);
 if (bb.name && !bb.svg && !usable(bb.logo))
   warn("site.builtBy has no mark — add builtBy.svg (inline SVG, preferred) or builtBy.logo.");
-if (!usable(media.logo)) warn("media.logo is empty — the header shows the business name as text only.");
+if (!usable(media.logo) && !(c.site && c.site.markSvg)) warn("media.logo is empty — the header shows the business name as text only.");
 if (!Array.isArray(media.gallery) || !media.gallery.length)
   warn("media.gallery is empty — job photos are the strongest credibility signal on a local trade site.");
 if (!media.hero) warn("media.hero is empty — a real photo is the biggest single lift on a local service site.");

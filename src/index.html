@@ -24,8 +24,7 @@
 <header class="topbar">
   <a class="wordmark" href="/">{{LOGO_BLOCK}}<span class="wordmark-text">{{BUSINESS_NAME}}<em>{{CITY}}, TX</em></span></a>
   <nav aria-label="Main">
-    <a href="services.html">Services</a>
-    <a href="contact.html">Hours</a>
+    {{SECTION_NAV}}
     <a class="topbar-call" href="{{PHONE_HREF}}">{{PHONE}}</a>
   </nav>
 </header>
@@ -56,17 +55,21 @@
         </p>
         <p class="hero-badge-v" data-status-detail>{{ADDRESS_LOCALITY}}</p>
         <p class="hero-badge-note">{{HERO_BADGE_NOTE}}</p>
+        {{BADGE_RATING}}
       </aside>
     </div>
 
-    <div class="hero-cards">
-{{HERO_CARDS}}
-    </div>
+
   </section>
 
-  <section class="band" aria-labelledby="services-title">
-    <p class="kicker">Services</p>
+  <section class="band" id="services" aria-labelledby="services-title">
+    <div class="svc-head">
+      <div>
+        <p class="kicker">Services</p>
     <h2 id="services-title">{{SERVICES_HEAD}}</h2>
+      </div>
+      {{QUOTE_BTN}}
+    </div>
     <ul class="services">
 {{SERVICES_CARDS}}
     </ul>
@@ -81,15 +84,7 @@
 
 {{TESTIMONIALS_SECTION}}
 
-{{CALLOUT_SECTION}}
-
-  <section class="band band-quiet" aria-labelledby="area-title">
-    <p class="kicker">Coverage</p>
-    <h2 id="area-title">{{LOCATION_HEAD}}</h2>
-      {{LOCATION_BLOCK}}
-  </section>
-
-{{CTA_SECTION}}
+{{LOCATION_SECTION}}
 
 </main>
 
@@ -98,6 +93,8 @@
   <p class="foot-fine">&copy; {{YEAR}} {{BUSINESS_NAME}}</p>
   {{BUILT_BY}}
 </footer>
+
+{{FAB}}
 
 <a class="callbar" href="{{PHONE_HREF}}">Call now &middot; {{PHONE}}</a>
 
@@ -137,6 +134,82 @@
   else detail.textContent="Opens "+next.day.charAt(0).toUpperCase()+next.day.slice(1)+" at "+label(next.at);
 })();
 </script>
+
+<script>
+(function () {
+  var cards = document.querySelectorAll(".service.has-pop");
+  if (!cards.length) return;
+  var open = null;
+  function close() { if (open) { open.classList.remove("open"); open = null; } }
+  cards.forEach(function (c) {
+    c.addEventListener("click", function (e) {
+      if (e.target.closest(".svc-pop")) return;
+      var was = c === open;
+      close();
+      if (!was) { c.classList.add("open"); open = c; }
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".service.has-pop")) close();
+  }, true);
+  window.addEventListener("scroll", close, { passive: true });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+})();
+</script>
+{{QUOTE_MODAL}}
+
+<script>
+(function () {
+  function bind(modal, openers) {
+    if (!modal) return null;
+    function open() {
+      modal.hidden = false;
+      document.body.classList.add("modal-open");
+      var x = modal.querySelector(".modal-x"); if (x) x.focus();
+    }
+    function shut() {
+      modal.hidden = true;
+      document.body.classList.remove("modal-open");
+    }
+    document.querySelectorAll(openers).forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); open(); });
+    });
+    modal.querySelectorAll("[data-close]").forEach(function (b) {
+      b.addEventListener("click", shut);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) shut();
+    });
+    return { open: open, shut: shut };
+  }
+
+  bind(document.getElementById("brands-modal"), "[data-brands]");
+
+  var qm = document.getElementById("quote-modal");
+  var q = bind(qm, "[data-quote]");
+  if (!q) return;
+  var choice = qm.querySelector("[data-q-choice]"),
+      form = qm.querySelector("[data-q-form]"),
+      err = qm.querySelector("[data-q-err]");
+  document.querySelectorAll("[data-quote]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      choice.hidden = false; form.hidden = true; if (err) err.hidden = true;
+    });
+  });
+  var start = qm.querySelector("[data-q-start]");
+  if (start) start.addEventListener("click", function () {
+    choice.hidden = true; form.hidden = false;
+    var f = form.querySelector("input[name=phone]"); if (f) f.focus();
+  });
+  form.addEventListener("submit", function (e) {
+    var ok = Array.prototype.some.call(
+      form.querySelectorAll("[data-q-contact]"),
+      function (i) { return i.value.trim() !== ""; });
+    if (!ok) { e.preventDefault(); if (err) err.hidden = false; }
+  });
+})();
+</script>
+{{BRANDS_MODAL}}
 
 </body>
 </html>

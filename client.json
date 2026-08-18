@@ -36,54 +36,131 @@
     {
       "name": "Tires & wheels",
       "featured": true,
-      "detail": "New and used tires, custom wheels, mounting and balancing."
+      "detail": "New and used tires, custom wheels, mounting and balancing.",
+      "includes": [
+        "Mount and computer balance",
+        "New valve stems or TPMS service kit",
+        "Torque to factory spec",
+        "Old tire disposal",
+        "Pressure set and road test"
+      ],
+      "brands": true
     },
     {
       "name": "Brakes & safety",
       "featured": true,
-      "detail": "Pads, rotors, calipers and full brake inspections."
+      "detail": "Pads, rotors, calipers and full brake inspections.",
+      "includes": [
+        "Pads and rotors, front or rear",
+        "Hardware, shims and clips",
+        "Caliper slides cleaned and lubricated",
+        "Brake fluid level and condition check",
+        "Road test and bed-in"
+      ]
     },
     {
       "name": "Engine & performance",
       "featured": true,
-      "detail": "Diagnostics through engine work, foreign and domestic."
+      "detail": "Diagnostics through engine work, foreign and domestic.",
+      "includes": [
+        "Diagnosis before any teardown",
+        "Gaskets, seals and hardware replaced",
+        "Fluids refilled to spec",
+        "Post-repair scan and road test"
+      ]
     },
     {
       "name": "Oil & fluid service",
-      "detail": "Conventional through full synthetic, filters and fluids."
+      "detail": "Conventional through full synthetic, filters and fluids.",
+      "includes": [
+        "Oil and filter, spec grade",
+        "Drain plug gasket replaced",
+        "All fluids topped off",
+        "Tire pressures set",
+        "Used oil disposal"
+      ]
     },
     {
       "name": "A/C & heating",
-      "detail": "Recharge, leak diagnosis and component replacement."
+      "detail": "Recharge, leak diagnosis and component replacement.",
+      "includes": [
+        "Performance test, vent temperature measured",
+        "Leak check with dye or electronic detector",
+        "System evacuated and recharged",
+        "Refrigerant oil and dryer as needed"
+      ]
     },
     {
       "name": "Cooling system",
-      "detail": "Radiators, water pumps, thermostats and hoses."
+      "detail": "Radiators, water pumps, thermostats and hoses.",
+      "includes": [
+        "Coolant drain and flush",
+        "System pressure and cap test",
+        "Thermostat, hoses and clamps as needed",
+        "Bleed and heat-cycle check"
+      ]
     },
     {
       "name": "Transmission",
       "featured": true,
-      "detail": "Service, diagnosis and replacement."
+      "detail": "Service, diagnosis and replacement.",
+      "includes": [
+        "Fluid and filter service",
+        "Pan gasket replaced",
+        "Scan for transmission codes",
+        "Level set at operating temperature"
+      ]
     },
     {
       "name": "Suspension & steering",
-      "detail": "Struts, shocks, control arms and alignments."
+      "detail": "Struts, shocks, control arms and alignments.",
+      "includes": [
+        "Struts, shocks, control arms or tie rods",
+        "Mounts, bearings and boots",
+        "Torque to spec at ride height",
+        "Alignment recommendation after install"
+      ]
     },
     {
       "name": "Exhaust & emissions",
-      "detail": "Exhaust repair and emissions troubleshooting."
+      "detail": "Exhaust repair and emissions troubleshooting.",
+      "includes": [
+        "Leak inspection, manifold to tip",
+        "Gaskets, clamps and hangers",
+        "Oxygen sensor testing",
+        "Emissions readiness verified"
+      ]
     },
     {
       "name": "Electrical & starting",
-      "detail": "Batteries, starters, alternators and wiring faults."
+      "detail": "Batteries, starters, alternators and wiring faults.",
+      "includes": [
+        "Battery load and charging system test",
+        "Starter draw test",
+        "Terminals cleaned, cables checked",
+        "Alternator output under load"
+      ]
     },
     {
       "name": "Diagnostics & inspection",
-      "detail": "Check-engine scans and pre-trip inspections."
+      "detail": "Check-engine scans and pre-trip inspections.",
+      "includes": [
+        "Full OBD scan, stored and pending codes",
+        "Live data under load",
+        "Visual inspection of the affected system",
+        "Written findings before work is quoted"
+      ]
     },
     {
       "name": "Trucks & off-road",
-      "detail": "Lift kits, oversized tires and truck-specific work."
+      "detail": "Lift kits, oversized tires and truck-specific work.",
+      "includes": [
+        "Lift kits and leveling components",
+        "Oversized tire fitment confirmed",
+        "Torque to spec at ride height",
+        "Alignment recommendation after install"
+      ],
+      "brands": true
     }
   ],
   "areasServed": [
@@ -104,97 +181,72 @@
   "reviews": {
     "rating": "4.8",
     "count": 68,
-    "url": ""
+    "url": "https://www.google.com/search?q=bonham+discount+tire+and+auto#lrd=0x864b9dd8d9c5f085:0x999fb14b9bb6e5f5,1"
   },
   "chips": [
     "Foreign & domestic",
     "New & used tires",
-    "Financing, no credit needed",
-    "4.8 on Google"
+    "4.8 on Google",
+    "Financing, no credit needed"
   ],
-  "process": [
-    {
-      "title": "Pull in or call ahead",
-      "detail": "Walk-ins are fine. Tell us what it's doing \u2014 the noise, the light, the pull to one side \u2014 and we'll get eyes on it."
-    },
-    {
-      "title": "You hear the number first",
-      "detail": "We find the actual problem, then quote it. Nothing gets touched until you say go, and nothing gets added without a phone call."
-    },
-    {
-      "title": "Usually out the same day",
-      "detail": "Tires, brakes and routine work rarely need overnight. If it's bigger, you'll know that up front too."
-    }
-  ],
-  "trustPoints": [
-    {
-      "title": "Tires at every price point",
-      "detail": "New when you want them, good used when the budget says otherwise. We'll tell you honestly which one your car needs."
-    },
-    {
-      "title": "Foreign and domestic",
-      "detail": "One shop for the whole driveway \u2014 the work truck, the commuter, and the kid's first car."
-    },
-    {
-      "title": "Credit isn't the gate",
-      "detail": "Acima and Snap Finance. A bald tire is a safety problem, not a credit decision."
-    },
-    {
-      "title": "Quoted before we start",
-      "detail": "You approve a number first. No mystery line items when you come to pay."
-    },
-    {
-      "title": "4.8 from 68 neighbors",
-      "detail": "Fannin County drivers who came back a second time and said so publicly."
-    },
-    {
-      "title": "We're not going anywhere",
-      "detail": "Same building, same people. If something isn't right, you know exactly where to find us."
-    }
-  ],
-  "callout": {
-    "kicker": "Financing",
-    "title": "Credit shouldn't decide whether you drive safely",
-    "body": "Acima and Snap Finance approve regardless of credit history. Get the tires or the repair now, pay it out over time \u2014 because worn brakes don't wait for payday.",
-    "partners": [
-      "Acima",
-      "Snap Finance"
-    ],
-    "action": "Call to apply"
-  },
+  "process": [],
+  "trustPoints": [],
   "media": {
-    "hero": "assets/full-building.png",
-    "logo": "assets/logo.png",
+    "hero": "assets/shopfront.jpg",
+    "logo": "assets/logo.jpg",
     "gallery": [
       {
-        "src": "assets/full-building.png",
-        "caption": "Look for the yellow sign on N Center St"
+        "src": "assets/tirebay.jpg",
+        "caption": ""
       },
       {
-        "src": "assets/summer-bays.png",
-        "caption": "Doors up six days a week"
+        "src": "assets/alignmentbay.jpg",
+        "caption": ""
       },
       {
-        "src": "assets/bronco-tires.png",
-        "caption": "New Bronco, new set of tires"
+        "src": "assets/garage.jpg",
+        "caption": ""
       },
       {
-        "src": "assets/vintage-ford.png",
-        "caption": "Old iron gets the same care as new"
+        "src": "assets/summer-bays.jpg",
+        "caption": ""
       },
       {
-        "src": "assets/oil-price-board.png",
-        "caption": "Prices on the wall, not a surprise on the invoice"
+        "src": "assets/vintage-ford.jpg",
+        "caption": ""
       },
       {
-        "src": "assets/waiting-room.png",
-        "caption": "Wait here, or we'll call you when it's ready"
+        "src": "assets/full-building.jpg",
+        "caption": ""
       }
     ],
     "galleryKicker": "In the bays",
-    "galleryTitle": "What comes through the door"
+    "galleryTitle": "What comes through the shop",
+    "storefront": "assets/full-building.jpg",
+    "facebook": "https://www.facebook.com/profile.php?id=61552369378244"
   },
-  "testimonials": [],
+  "testimonials": [
+    {
+      "quote": "These guys are awesome. I had my truck in 2 different shops and no one could or wouldn't take the time to pin point the problem. I took my truck to these guys and they went above and beyond to fix the problem. I was in tears because it felt like a brand new truck. I highly recommend them.",
+      "name": "Lisa H.",
+      "when": "Google review"
+    },
+    {
+      "quote": "My driver side front tire was blown from hitting a pot hole. I was recommended to come here and they helped me replace it and my other bad tires at a reasonable price. The tires are still doing great and since I purchased a whole set I was given a free wheel alignment.",
+      "name": "Andy G.",
+      "when": "Google review"
+    },
+    {
+      "quote": "If you want honesty and fair pricing this is your place. I've had many different mechanics throughout my years and they are by far the best. If something doesn't need to be fixed they won't fix it, they give you options, and they always have a positive attitude.",
+      "name": "Jonathan M.",
+      "when": "Google review"
+    },
+    {
+      "quote": "These guys are great, and that's really an understatement. Very professional and just all around make you feel like family. Today was my first time using them and I felt as if I've known them for years. All around 100 outta 10 customer service and quality.",
+      "name": "Brandon",
+      "when": "Google review"
+    }
+  ],
   "google": {
     "profileUrl": "",
     "reviewUrl": "",
@@ -217,7 +269,8 @@
     "paper": "#f9fafb",
     "paper2": "#eef1f5",
     "steel": "#5b6779",
-    "rule": "#d5dae2"
+    "rule": "#d5dae2",
+    "radius": "10px"
   },
   "cta": {
     "title": "Something not right with it?",
@@ -226,6 +279,60 @@
   "headings": {
     "services": "Tires, brakes, and everything after",
     "process": "Three visits' worth of trust, in one",
-    "trust": "Why people come back"
+    "trust": "Why people come back",
+    "reviews": "Rated 4.8 by Fannin County drivers"
+  },
+  "brands": {
+    "kicker": "Brands",
+    "title": "Brands we fit",
+    "note": "Stocked or ordered same day from our distributors. If you have a set in mind, we can get it.",
+    "tires": [
+      "Michelin",
+      "Goodyear",
+      "Bridgestone",
+      "Continental",
+      "Pirelli",
+      "BFGoodrich",
+      "Firestone",
+      "Cooper",
+      "Toyo",
+      "Yokohama",
+      "Falken",
+      "Hankook",
+      "Kumho",
+      "Nitto",
+      "General",
+      "Uniroyal",
+      "Nexen",
+      "Mickey Thompson"
+    ],
+    "wheels": [
+      "Forgiato",
+      "American Force",
+      "Fuel",
+      "Method",
+      "XD Series",
+      "KMC",
+      "Rotiform",
+      "Vossen",
+      "Niche",
+      "Moto Metal",
+      "Black Rhino",
+      "Asanti",
+      "Lexani",
+      "DUB",
+      "TIS",
+      "HRE"
+    ]
+  },
+  "promise": {
+    "kicker": "Same-day promise",
+    "title": "In before noon, out the same day.",
+    "body": "Tires, brakes, oil and most routine work. Bigger jobs get a timeline before we start."
+  },
+  "form": {
+    "label": "Get a quote today",
+    "kicker": "Get a quote",
+    "title": "Tell us what you need"
   }
 }

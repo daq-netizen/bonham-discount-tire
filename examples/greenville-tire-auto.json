@@ -1,0 +1,211 @@
+{
+  "slug": "greenville-tire-auto",
+  "business": {
+    "name": "Greenville Tire & Auto Repair",
+    "trade": "Tire & auto repair",
+    "schemaType": "AutoRepair",
+    "serviceAreaBusiness": false,
+    "tagline": "Greenville's one-stop tire and auto shop.",
+    "description": "New and used tires, brakes, A/C, suspension and engine work \u2014 foreign and domestic, all in the same bays on Commerce Drive. Quoted before we start, most of it done the same day.",
+    "taglineAccent": "one-stop"
+  },
+  "contact": {
+    "phone": "(430) 242-1139",
+    "email": "",
+    "address": {
+      "street": "905 Commerce Dr",
+      "city": "Greenville",
+      "state": "TX",
+      "zip": "75401"
+    },
+    "mapUrl": "https://maps.google.com/?q=905+Commerce+Dr+Greenville+TX+75401",
+    "geo": {
+      "lat": null,
+      "lng": null
+    }
+  },
+  "hours": {
+    "monday": "08:00-18:00",
+    "tuesday": "08:00-18:00",
+    "wednesday": "08:00-18:00",
+    "thursday": "08:00-18:00",
+    "friday": "08:00-18:00",
+    "saturday": "08:00-17:00",
+    "sunday": "closed"
+  },
+  "headings": {
+    "services": "Everything under one roof",
+    "process": "How a visit goes",
+    "trust": "Why Hunt County keeps coming back"
+  },
+  "services": [
+    {
+      "name": "New tires",
+      "featured": true,
+      "detail": "BFGoodrich, Milestar, Westlake and more. Passenger, truck and off-road, mounted and balanced on site."
+    },
+    {
+      "name": "Used tires",
+      "featured": true,
+      "detail": "Quality takeoffs at a fraction of new. We'll tell you honestly how much life is left."
+    },
+    {
+      "name": "Tire repair",
+      "featured": true,
+      "detail": "Patches and plugs done properly. Flats, slow leaks and road hazard damage."
+    },
+    {
+      "name": "Custom wheels & lift kits",
+      "tag": "Trucks welcome",
+      "detail": "Lift kits, oversized tires and aftermarket rims \u2014 the truck work plenty of shops turn away."
+    },
+    {
+      "name": "Brakes & rotors",
+      "featured": true,
+      "detail": "Pads, rotors and full brake service. Inspected before we quote."
+    },
+    {
+      "name": "Oil changes",
+      "price": "From $32",
+      "detail": "Synthetic blend special at $32 for the first 5 quarts, $5 each after. Full synthetic $52, $10 a quart after 5."
+    },
+    {
+      "name": "Suspension & steering",
+      "detail": "Struts, shocks, control arms, tie rods and steering repair."
+    },
+    {
+      "name": "Air conditioning",
+      "detail": "Recharge, leak diagnosis and component replacement \u2014 worth doing before August."
+    },
+    {
+      "name": "Engine diagnostics",
+      "detail": "Check-engine scans and drivability troubleshooting on the actual cause, not a guess at parts."
+    },
+    {
+      "name": "Battery, starter & alternator",
+      "detail": "Free testing, fast replacement, back on the road the same visit."
+    },
+    {
+      "name": "Transmission",
+      "detail": "Service, diagnosis and repair."
+    },
+    {
+      "name": "Filters & maintenance",
+      "detail": "Air and cabin filters, fluids and the scheduled service that keeps the big bills away."
+    }
+  ],
+  "areasServed": [
+    "Greenville",
+    "Commerce",
+    "Quinlan",
+    "Caddo Mills",
+    "Campbell",
+    "Wolfe City",
+    "Royse City"
+  ],
+  "coverage": {
+    "region": "Hunt County",
+    "short": "Greenville",
+    "heading": "Right on Commerce Drive",
+    "summary": "The blue building on Commerce Drive with the tires stacked out front. Three bays, walk-ins welcome, and one shop that handles the whole list instead of sending you somewhere else for half of it.",
+    "note": "Pull in during business hours or call ahead \u2014 we'll tell you what it takes before you commit."
+  },
+  "reviews": {
+    "rating": "4.7",
+    "count": 144,
+    "url": ""
+  },
+  "chips": [
+    "Foreign & domestic",
+    "New & used tires",
+    "Financing, no credit needed",
+    "4.7 on Google"
+  ],
+  "process": [
+    {
+      "title": "Pull in or call ahead",
+      "detail": "Walk-ins welcome. A flat, a noise, a warning light or a full set of tires \u2014 tell us and we'll get eyes on it."
+    },
+    {
+      "title": "We look, then we quote",
+      "detail": "We find the actual problem before we price it. Nothing gets added without asking you first."
+    },
+    {
+      "title": "Most of it, same day",
+      "detail": "Tires, brakes, oil and routine service go out the same visit. Bigger jobs get a timeline up front."
+    }
+  ],
+  "trustPoints": [
+    {
+      "title": "One shop, not four",
+      "detail": "Tires, brakes, A/C, suspension and engine work happen in the same bays. Nobody sends you across town for the next thing."
+    },
+    {
+      "title": "Foreign and domestic",
+      "detail": "The work truck, the commuter and the kid's first car all get handled here."
+    },
+    {
+      "title": "New or used, your call",
+      "detail": "Full range of tire price points. We'll tell you honestly which one your vehicle actually needs."
+    },
+    {
+      "title": "Credit isn't the gate",
+      "detail": "Acima and Snap Finance. A bald tire is a safety problem, not a credit decision."
+    },
+    {
+      "title": "Quoted before we start",
+      "detail": "You approve a number first. No mystery line items when you come to pay."
+    },
+    {
+      "title": "Se habla espa\u00f1ol",
+      "detail": "Explicamos el trabajo y el precio en espa\u00f1ol, sin apuros."
+    }
+  ],
+  "callout": {
+    "kicker": "Financing",
+    "title": "Credit shouldn't decide whether you drive safely",
+    "body": "Acima and Snap Finance approve regardless of credit history. Get the tires or the repair now and pay it out over time \u2014 because worn brakes don't wait for payday.",
+    "partners": [
+      "Acima",
+      "Snap Finance"
+    ],
+    "action": "Call to apply"
+  },
+  "cta": {
+    "title": "Whatever it needs, we do it here.",
+    "body": "Pull into Commerce Drive or call. We'll look at it, tell you straight what it takes, and price it before we touch it."
+  },
+  "media": {
+    "hero": "assets/shop-front.jpg",
+    "logo": "",
+    "galleryKicker": "Out front and in the bays",
+    "galleryTitle": "What rolls through Commerce Drive",
+    "gallery": []
+  },
+  "testimonials": [],
+  "google": {
+    "profileUrl": "",
+    "reviewUrl": "",
+    "placeId": ""
+  },
+  "site": {
+    "domain": "",
+    "accent": "#2E90FF",
+    "accentInk": "#0b1220",
+    "ink": "#0d1520",
+    "ink2": "#152234",
+    "ink3": "#24374f",
+    "paper": "#f4f6f9",
+    "paper2": "#e7ebf1",
+    "steel": "#5d6b7f",
+    "rule": "#d3dae3",
+    "builtBy": {
+      "label": "Powered by",
+      "name": "DAQ",
+      "nameAccent": "WORKS",
+      "url": "https://daqworks.app",
+      "svg": "<svg viewBox=\"0 0 54 80\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"7\" height=\"80\" rx=\"3.5\" fill=\"currentColor\" opacity=\"1\"/><rect x=\"9\" y=\"28\" width=\"7\" height=\"52\" rx=\"3.5\" fill=\"currentColor\" opacity=\"0.6\"/><rect x=\"18\" y=\"55\" width=\"7\" height=\"25\" rx=\"3.5\" fill=\"currentColor\" opacity=\"0.3\"/><rect x=\"29\" y=\"57\" width=\"7\" height=\"23\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"0.3\"/><rect x=\"38\" y=\"28\" width=\"7\" height=\"52\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"0.65\"/><rect x=\"47\" y=\"0\" width=\"7\" height=\"80\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"1\"/></svg>"
+    },
+    "radius": "10px"
+  }
+}

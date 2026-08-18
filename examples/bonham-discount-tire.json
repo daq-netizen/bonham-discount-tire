@@ -217,7 +217,8 @@
     "paper": "#f9fafb",
     "paper2": "#eef1f5",
     "steel": "#5b6779",
-    "rule": "#d5dae2"
+    "rule": "#d5dae2",
+    "radius": "10px"
   },
   "cta": {
     "title": "Something not right with it?",

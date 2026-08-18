@@ -135,7 +135,8 @@
       "nameAccent": "WORKS",
       "url": "https://daqworks.app",
       "svg": "<svg viewBox=\"0 0 54 80\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"7\" height=\"80\" rx=\"3.5\" fill=\"currentColor\" opacity=\"1\"/><rect x=\"9\" y=\"28\" width=\"7\" height=\"52\" rx=\"3.5\" fill=\"currentColor\" opacity=\"0.6\"/><rect x=\"18\" y=\"55\" width=\"7\" height=\"25\" rx=\"3.5\" fill=\"currentColor\" opacity=\"0.3\"/><rect x=\"29\" y=\"57\" width=\"7\" height=\"23\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"0.3\"/><rect x=\"38\" y=\"28\" width=\"7\" height=\"52\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"0.65\"/><rect x=\"47\" y=\"0\" width=\"7\" height=\"80\" rx=\"3.5\" fill=\"#f59e0b\" opacity=\"1\"/></svg>"
-    }
+    },
+    "radius": "10px"
   },
   "media": {
     "hero": "assets/hero.jpg",

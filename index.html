@@ -106,10 +106,12 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="topbar">
-  <a class="wordmark" href="/"><img class="wordmark-logo" src="assets/logo.png" alt=""><span class="wordmark-text">Bonham Discount Tire and Auto<em>Bonham, TX</em></span></a>
+  <a class="wordmark" href="/"><img class="wordmark-logo" src="assets/logo.jpg" alt=""><span class="wordmark-text">Bonham Discount Tire and Auto<em>Bonham, TX</em></span></a>
   <nav aria-label="Main">
-    <a href="services.html">Services</a>
-    <a href="contact.html">Hours</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#location">Location</a>
     <a class="topbar-call" href="tel:+19035830083">(903) 583-0083</a>
   </nav>
 </header>
@@ -117,7 +119,7 @@
 
 <main id="main">
 
-  <section class="hero" style="background-image:url('assets/full-building.png')">
+  <section class="hero" style="background-image:url('assets/shopfront.jpg')">
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Tire &amp; auto shop &middot; Fannin County</p>
@@ -130,7 +132,7 @@
           <a class="btn btn-ghost" href="https://maps.google.com/?q=1603+N+Center+St+Bonham+TX+75418" target="_blank" rel="noopener">Get directions</a>
         </div>
 
-        <ul class="chips"><li>Foreign &amp; domestic</li><li>New &amp; used tires</li><li>Financing, no credit needed</li><li>4.8 on Google</li></ul>
+        <ul class="chips"><li>Foreign &amp; domestic</li><li>New &amp; used tires</li><li>4.8 on Google</li><li>Financing, no credit needed</li></ul>
       </div>
 
       <aside class="hero-badge">
@@ -140,210 +142,231 @@
         </p>
         <p class="hero-badge-v" data-status-detail>Bonham, TX 75418</p>
         <p class="hero-badge-note">1603 N Center St, Bonham</p>
+        <p class="badge-rating"><span class="stars" aria-hidden="true">&#9733;</span><strong>4.8</strong><span>68 Google reviews</span></p>
       </aside>
     </div>
 
-    <div class="hero-cards">
-      <div class="hcard">
-        <span class="hcard-l">Google rating</span>
-        <span class="hcard-v"><span class="hcard-star">&#9733;</span>4.8<em>/ 68 reviews</em></span>
-      </div>
-      <div class="hcard">
-        <span class="hcard-l">Call us</span>
-        <a class="hcard-v hcard-link" href="tel:+19035830083">(903) 583-0083</a>
-      </div>
-      <div class="hcard">
-        <span class="hcard-l">We come to you</span>
-        <span class="hcard-v hcard-sm">Fannin County<em></em></span>
-      </div>
-    </div>
+
   </section>
 
-  <section class="band" aria-labelledby="services-title">
-    <p class="kicker">Services</p>
+  <section class="band" id="services" aria-labelledby="services-title">
+    <div class="svc-head">
+      <div>
+        <p class="kicker">Services</p>
     <h2 id="services-title">Tires, brakes, and everything after</h2>
+      </div>
+      
+    </div>
     <ul class="services">
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/></svg></span>
           <div class="service-body">
             <h3>Tires &amp; wheels</h3>
             <p>New and used tires, custom wheels, mounting and balancing.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Mount and computer balance</li><li>New valve stems or TPMS service kit</li><li>Torque to factory spec</li><li>Old tire disposal</li><li>Pressure set and road test</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v3M18.5 8.5l-2.6 1.5M18.5 15.5l-2.6-1.5M12 20v-3M5.5 15.5l2.6-1.5M5.5 8.5l2.6 1.5"/></svg></span>
           <div class="service-body">
             <h3>Brakes &amp; safety</h3>
             <p>Pads, rotors, calipers and full brake inspections.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Pads and rotors, front or rear</li><li>Hardware, shims and clips</li><li>Caliper slides cleaned and lubricated</li><li>Brake fluid level and condition check</li><li>Road test and bed-in</li></ul></div>
         </li>
-        <li class="service">
-          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h3l2-2h5l2 2h2v6h-2l-2 2h-5l-2-2H5z"/><path d="M9 6h5M11.5 6v2M19 12h2"/></svg></span>
+        <li class="service has-pop" tabindex="0">
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18a9 9 0 1 1 17 0"/><path d="M12 12l4.5-3.5"/><circle cx="12" cy="15" r="1.6"/><path d="M6.2 11.2l1 1M12 7.5v1.4M17.8 11.2l-1 1"/></svg></span>
           <div class="service-body">
             <h3>Engine &amp; performance</h3>
             <p>Diagnostics through engine work, foreign and domestic.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Diagnosis before any teardown</li><li>Gaskets, seals and hardware replaced</li><li>Fluids refilled to spec</li><li>Post-repair scan and road test</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s5.5 6 5.5 9.5a5.5 5.5 0 0 1-11 0C6.5 9.5 12 3.5 12 3.5z"/></svg></span>
           <div class="service-body">
             <h3>Oil &amp; fluid service</h3>
             <p>Conventional through full synthetic, filters and fluids.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Oil and filter, spec grade</li><li>Drain plug gasket replaced</li><li>All fluids topped off</li><li>Tire pressures set</li><li>Used oil disposal</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/><path d="M12 6.5l-2-2M12 6.5l2-2M12 17.5l-2 2M12 17.5l2 2"/></svg></span>
           <div class="service-body">
             <h3>A/C &amp; heating</h3>
             <p>Recharge, leak diagnosis and component replacement.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Performance test, vent temperature measured</li><li>Leak check with dye or electronic detector</li><li>System evacuated and recharged</li><li>Refrigerant oil and dryer as needed</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4.5a2 2 0 0 1 4 0v9a4 4 0 1 1-4 0z"/><path d="M12 9v5"/></svg></span>
           <div class="service-body">
             <h3>Cooling system</h3>
             <p>Radiators, water pumps, thermostats and hoses.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Coolant drain and flush</li><li>System pressure and cap test</li><li>Thermostat, hoses and clamps as needed</li><li>Bleed and heat-cycle check</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8 8v8M16 8v8M8 12h8M12 8v8"/></svg></span>
           <div class="service-body">
             <h3>Transmission</h3>
             <p>Service, diagnosis and replacement.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Fluid and filter service</li><li>Pan gasket replaced</li><li>Scan for transmission codes</li><li>Level set at operating temperature</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2"/><path d="M8 6h8l-8 3h8l-8 3h8l-8 3h8"/></svg></span>
           <div class="service-body">
             <h3>Suspension &amp; steering</h3>
             <p>Struts, shocks, control arms and alignments.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Struts, shocks, control arms or tie rods</li><li>Mounts, bearings and boots</li><li>Torque to spec at ride height</li><li>Alignment recommendation after install</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h10a3 3 0 0 0 3-3V9h5v6h-5"/><path d="M6 17c1-1 2-1 3 0M11 18c1-1 2-1 3 0"/></svg></span>
           <div class="service-body">
             <h3>Exhaust &amp; emissions</h3>
             <p>Exhaust repair and emissions troubleshooting.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Leak inspection, manifold to tip</li><li>Gaskets, clamps and hangers</li><li>Oxygen sensor testing</li><li>Emissions readiness verified</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="14" height="9" rx="1.5"/><path d="M17 11h3v3h-3M6 5.5h3M10 10.5l-2 3h3l-2 3"/></svg></span>
           <div class="service-body">
             <h3>Electrical &amp; starting</h3>
             <p>Batteries, starters, alternators and wiring faults.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Battery load and charging system test</li><li>Starter draw test</li><li>Terminals cleaned, cables checked</li><li>Alternator output under load</li></ul></div>
         </li>
-        <li class="service">
+        <li class="service has-pop" tabindex="0">
           <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 12l4.5-3.5M12 12v.01"/><path d="M12 3.5v2M20.5 12h-2M12 20.5v-2M3.5 12h2"/></svg></span>
           <div class="service-body">
             <h3>Diagnostics &amp; inspection</h3>
             <p>Check-engine scans and pre-trip inspections.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Full OBD scan, stored and pending codes</li><li>Live data under load</li><li>Visual inspection of the affected system</li><li>Written findings before work is quoted</li></ul></div>
         </li>
-        <li class="service">
-          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l3 3v4h-7z"/><circle cx="6.5" cy="18" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/></svg></span>
+        <li class="service has-pop" tabindex="0">
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M7 20v-5M17 20v-5"/><path d="M5 15h14l-1.5-5.5a2 2 0 0 0-2-1.5h-7a2 2 0 0 0-2 1.5z"/><path d="M12 8V3M9.5 5.5L12 3l2.5 2.5"/></svg></span>
           <div class="service-body">
             <h3>Trucks &amp; off-road</h3>
             <p>Lift kits, oversized tires and truck-specific work.</p>
           </div>
+          <div class="svc-pop" role="tooltip"><p class="svc-pop-h">Typically includes</p><ul><li>Lift kits and leveling components</li><li>Oversized tire fitment confirmed</li><li>Torque to spec at ride height</li><li>Alignment recommendation after install</li></ul></div>
         </li>
     </ul>
     <p class="band-more"><a href="services.html">Full service list</a></p>
   </section>
 
-  <section class="band band-process" aria-labelledby="process-title">
-    <h2 id="process-title">Three visits' worth of trust, in one</h2>
-    <ol class="process">
-        <li>
-          <span class="process-num">01</span>
-          <h3>Pull in or call ahead</h3>
-          <p>Walk-ins are fine. Tell us what it's doing — the noise, the light, the pull to one side — and we'll get eyes on it.</p>
-        </li>
-        <li>
-          <span class="process-num">02</span>
-          <h3>You hear the number first</h3>
-          <p>We find the actual problem, then quote it. Nothing gets touched until you say go, and nothing gets added without a phone call.</p>
-        </li>
-        <li>
-          <span class="process-num">03</span>
-          <h3>Usually out the same day</h3>
-          <p>Tires, brakes and routine work rarely need overnight. If it's bigger, you'll know that up front too.</p>
-        </li>
-    </ol>
-  </section>
 
-  <section class="band band-quiet" aria-labelledby="trust-title">
-    <h2 id="trust-title">Why people come back</h2>
-    <ul class="trust">
-        <li><h3>Tires at every price point</h3><p>New when you want them, good used when the budget says otherwise. We'll tell you honestly which one your car needs.</p></li>
-        <li><h3>Foreign and domestic</h3><p>One shop for the whole driveway — the work truck, the commuter, and the kid's first car.</p></li>
-        <li><h3>Credit isn't the gate</h3><p>Acima and Snap Finance. A bald tire is a safety problem, not a credit decision.</p></li>
-        <li><h3>Quoted before we start</h3><p>You approve a number first. No mystery line items when you come to pay.</p></li>
-        <li><h3>4.8 from 68 neighbors</h3><p>Fannin County drivers who came back a second time and said so publicly.</p></li>
-        <li><h3>We're not going anywhere</h3><p>Same building, same people. If something isn't right, you know exactly where to find us.</p></li>
-    </ul>
-  </section>
 
-  <section class="band band-gallery" aria-labelledby="gallery-title">
-    <p class="kicker">In the bays</p>
-    <h2 id="gallery-title">What comes through the door</h2>
+
+
+  <section class="band band-gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="gal-head">
+      <div>
+        <p class="kicker">In the bays</p>
+        <h2 id="gallery-title">What comes through the shop</h2>
+      </div>
+      <div class="gal-social">
+        <a class="gal-ig" href="https://www.facebook.com/profile.php?id=61552369378244" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6A21 21 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V13h2.7v8z"/></svg>Facebook</a>
+      </div>
+    </div>
     <ul class="gallery">
         <li>
-          <img src="assets/full-building.png" alt="Look for the yellow sign on N Center St" loading="lazy">
-          <span>Look for the yellow sign on N Center St</span>
+          <img src="assets/tirebay.jpg" alt="" loading="lazy">
         </li>
         <li>
-          <img src="assets/summer-bays.png" alt="Doors up six days a week" loading="lazy">
-          <span>Doors up six days a week</span>
+          <img src="assets/alignmentbay.jpg" alt="" loading="lazy">
         </li>
         <li>
-          <img src="assets/bronco-tires.png" alt="New Bronco, new set of tires" loading="lazy">
-          <span>New Bronco, new set of tires</span>
+          <img src="assets/garage.jpg" alt="" loading="lazy">
         </li>
         <li>
-          <img src="assets/vintage-ford.png" alt="Old iron gets the same care as new" loading="lazy">
-          <span>Old iron gets the same care as new</span>
+          <img src="assets/summer-bays.jpg" alt="" loading="lazy">
         </li>
         <li>
-          <img src="assets/oil-price-board.png" alt="Prices on the wall, not a surprise on the invoice" loading="lazy">
-          <span>Prices on the wall, not a surprise on the invoice</span>
+          <img src="assets/vintage-ford.jpg" alt="" loading="lazy">
         </li>
         <li>
-          <img src="assets/waiting-room.png" alt="Wait here, or we'll call you when it's ready" loading="lazy">
-          <span>Wait here, or we'll call you when it's ready</span>
+          <img src="assets/full-building.jpg" alt="" loading="lazy">
         </li>
     </ul>
   </section>
 
+  <section class="band band-reviews" id="reviews" aria-labelledby="reviews-title">
+    <p class="kicker">Google reviews</p>
+    <h2 id="reviews-title">Rated 4.8 by Fannin County drivers</h2>
+    <p class="reviews-link"><a href="https://www.google.com/search?q=bonham+discount+tire+and+auto#lrd=0x864b9dd8d9c5f085:0x999fb14b9bb6e5f5,1" target="_blank" rel="noopener">Read more reviews on Google <span aria-hidden="true">&#8599;</span></a></p>
+    <ul class="quotes">
+        <li>
+          <div class="quote-head">
+            <span class="avatar" aria-hidden="true">LH</span>
+            <span class="quote-who"><cite>Lisa H.</cite><span class="quote-when">Google review</span></span>
+          </div>
+          <blockquote>These guys are awesome. I had my truck in 2 different shops and no one could or wouldn't take the time to pin point the problem. I took my truck to these guys and they went above and beyond to fix the problem. I was in tears because it felt like a brand new truck. I highly recommend them.</blockquote>
+        </li>
+        <li>
+          <div class="quote-head">
+            <span class="avatar" aria-hidden="true">AG</span>
+            <span class="quote-who"><cite>Andy G.</cite><span class="quote-when">Google review</span></span>
+          </div>
+          <blockquote>My driver side front tire was blown from hitting a pot hole. I was recommended to come here and they helped me replace it and my other bad tires at a reasonable price. The tires are still doing great and since I purchased a whole set I was given a free wheel alignment.</blockquote>
+        </li>
+        <li>
+          <div class="quote-head">
+            <span class="avatar" aria-hidden="true">JM</span>
+            <span class="quote-who"><cite>Jonathan M.</cite><span class="quote-when">Google review</span></span>
+          </div>
+          <blockquote>If you want honesty and fair pricing this is your place. I've had many different mechanics throughout my years and they are by far the best. If something doesn't need to be fixed they won't fix it, they give you options, and they always have a positive attitude.</blockquote>
+        </li>
+        <li>
+          <div class="quote-head">
+            <span class="avatar" aria-hidden="true">B</span>
+            <span class="quote-who"><cite>Brandon</cite><span class="quote-when">Google review</span></span>
+          </div>
+          <blockquote>These guys are great, and that's really an understatement. Very professional and just all around make you feel like family. Today was my first time using them and I felt as if I've known them for years. All around 100 outta 10 customer service and quality.</blockquote>
+        </li>
+    </ul>
+  </section>
 
+  <section class="band band-quiet" id="location">
+    <p class="kicker">Location</p>
+    <h2>You know where to find us</h2>
 
-  <section class="band band-callout">
-    <div class="callout">
-      <div>
-        <p class="kicker">Financing</p>
-        <h2>Credit shouldn't decide whether you drive safely</h2>
-        <p class="lede">Acima and Snap Finance approve regardless of credit history. Get the tires or the repair now, pay it out over time — because worn brakes don't wait for payday.</p>
-        <p class="callout-partners">Acima &middot; Snap Finance</p>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <h3>Bonham Discount Tire and Auto</h3>
+        <p class="loc-addr">1603 N Center St<br>Bonham, TX 75418</p>
+        <p class="loc-tel"><a href="tel:+19035830083">(903) 583-0083</a></p>
+        <table class="hours"><caption class="sr-only">Opening hours</caption><tbody>
+        <tr data-day="monday"><th scope="row">Mon</th><td>8:30 AM &ndash; 5:30 PM</td></tr>
+        <tr data-day="tuesday"><th scope="row">Tue</th><td>8:30 AM &ndash; 5:30 PM</td></tr>
+        <tr data-day="wednesday"><th scope="row">Wed</th><td>8:30 AM &ndash; 5:30 PM</td></tr>
+        <tr data-day="thursday"><th scope="row">Thu</th><td>8:30 AM &ndash; 5:30 PM</td></tr>
+        <tr data-day="friday"><th scope="row">Fri</th><td>8:30 AM &ndash; 5:30 PM</td></tr>
+        <tr data-day="saturday"><th scope="row">Sat</th><td>8:30 AM &ndash; 5:00 PM</td></tr>
+        <tr data-day="sunday"><th scope="row">Sun</th><td class="is-closed">Closed</td></tr>
+        </tbody></table>
+        <div class="btn-row">
+          <a class="btn btn-call" href="tel:+19035830083">Call now</a>
+          <a class="btn btn-quiet" href="https://maps.google.com/?q=1603+N+Center+St+Bonham+TX+75418" target="_blank" rel="noopener">Get directions</a>
+        </div>
       </div>
-      <a class="btn btn-call" href="tel:+19035830083">Call to apply</a>
+      <div class="loc-media">
+        <div class="loc-promise">
+          <p class="loc-promise-h">Same-day promise</p>
+          <p class="loc-promise-t">In before noon, out the same day.</p>
+          <p class="loc-promise-b">Tires, brakes, oil and most routine work. Bigger jobs get a timeline before we start.</p>
+        </div>
+        
+        <img src="assets/full-building.jpg" alt="Bonham Discount Tire and Auto" loading="lazy">
+        <iframe class="loc-map" src="https://maps.google.com/maps?q=1603%20N%20Center%20St%2C%20Bonham%2C%20TX%2075418&z=15&output=embed"
+                title="Map to Bonham Discount Tire and Auto" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
-  </section>
 
-  <section class="band band-quiet" aria-labelledby="area-title">
-    <p class="kicker">Coverage</p>
-    <h2 id="area-title">You know where to find us</h2>
-      <address class="addr">
-        <a href="https://maps.google.com/?q=1603+N+Center+St+Bonham+TX+75418" target="_blank" rel="noopener">1603 N Center St<br>Bonham, TX 75418</a>
-      </address>
-  </section>
-
-  <section class="band band-cta">
-    <div class="hazard" aria-hidden="true"></div>
-    <h2>Something not right with it?</h2>
-    <p class="lede">Bring it by or call and describe it. We'll tell you what's actually wrong and what it costs before you commit to anything.</p>
-    <div class="btn-row">
-      <a class="btn btn-call" href="tel:+19035830083">Call (903) 583-0083</a>
-    </div>
+    
   </section>
 
 </main>
@@ -355,6 +378,11 @@
     <span class="built-by-mark"><svg viewBox="0 0 54 80" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="7" height="80" rx="3.5" fill="currentColor" opacity="1"/><rect x="9" y="28" width="7" height="52" rx="3.5" fill="currentColor" opacity="0.6"/><rect x="18" y="55" width="7" height="25" rx="3.5" fill="currentColor" opacity="0.3"/><rect x="29" y="57" width="7" height="23" rx="3.5" fill="#f59e0b" opacity="0.3"/><rect x="38" y="28" width="7" height="52" rx="3.5" fill="#f59e0b" opacity="0.65"/><rect x="47" y="0" width="7" height="80" rx="3.5" fill="#f59e0b" opacity="1"/></svg></span><span class="built-by-label">Powered by</span><span class="built-by-name"><strong>DAQ</strong><em>WORKS</em></span>
   </a></p>
 </footer>
+
+<div class="fab" aria-hidden="false">
+  <a class="fab-btn" href="tel:+19035830083" aria-label="Call (903) 583-0083"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg></a>
+  <a class="fab-btn" href="https://maps.google.com/?q=1603+N+Center+St+Bonham+TX+75418" target="_blank" rel="noopener" aria-label="Get directions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
+</div>
 
 <a class="callbar" href="tel:+19035830083">Call now &middot; (903) 583-0083</a>
 
@@ -394,6 +422,98 @@
   else detail.textContent="Opens "+next.day.charAt(0).toUpperCase()+next.day.slice(1)+" at "+label(next.at);
 })();
 </script>
+
+<script>
+(function () {
+  var cards = document.querySelectorAll(".service.has-pop");
+  if (!cards.length) return;
+  var open = null;
+  function close() { if (open) { open.classList.remove("open"); open = null; } }
+  cards.forEach(function (c) {
+    c.addEventListener("click", function (e) {
+      if (e.target.closest(".svc-pop")) return;
+      var was = c === open;
+      close();
+      if (!was) { c.classList.add("open"); open = c; }
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".service.has-pop")) close();
+  }, true);
+  window.addEventListener("scroll", close, { passive: true });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+})();
+</script>
+
+
+<script>
+(function () {
+  function bind(modal, openers) {
+    if (!modal) return null;
+    function open() {
+      modal.hidden = false;
+      document.body.classList.add("modal-open");
+      var x = modal.querySelector(".modal-x"); if (x) x.focus();
+    }
+    function shut() {
+      modal.hidden = true;
+      document.body.classList.remove("modal-open");
+    }
+    document.querySelectorAll(openers).forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); open(); });
+    });
+    modal.querySelectorAll("[data-close]").forEach(function (b) {
+      b.addEventListener("click", shut);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) shut();
+    });
+    return { open: open, shut: shut };
+  }
+
+  bind(document.getElementById("brands-modal"), "[data-brands]");
+
+  var qm = document.getElementById("quote-modal");
+  var q = bind(qm, "[data-quote]");
+  if (!q) return;
+  var choice = qm.querySelector("[data-q-choice]"),
+      form = qm.querySelector("[data-q-form]"),
+      err = qm.querySelector("[data-q-err]");
+  document.querySelectorAll("[data-quote]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      choice.hidden = false; form.hidden = true; if (err) err.hidden = true;
+    });
+  });
+  var start = qm.querySelector("[data-q-start]");
+  if (start) start.addEventListener("click", function () {
+    choice.hidden = true; form.hidden = false;
+    var f = form.querySelector("input[name=phone]"); if (f) f.focus();
+  });
+  form.addEventListener("submit", function (e) {
+    var ok = Array.prototype.some.call(
+      form.querySelectorAll("[data-q-contact]"),
+      function (i) { return i.value.trim() !== ""; });
+    if (!ok) { e.preventDefault(); if (err) err.hidden = false; }
+  });
+})();
+</script>
+<div class="modal" id="brands-modal" hidden>
+  <div class="modal-scrim" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="brands-modal-t">
+    <button type="button" class="modal-x" data-close aria-label="Close">&#215;</button>
+    <p class="kicker">Brands</p>
+    <h2 id="brands-modal-t">Brands we fit</h2>
+    <p class="modal-note">Stocked or ordered same day from our distributors. If you have a set in mind, we can get it.</p>
+      <div class="brand-grp">
+        <p class="brand-h">Tires</p>
+        <ul class="brand-list"><li>Michelin</li><li>Goodyear</li><li>Bridgestone</li><li>Continental</li><li>Pirelli</li><li>BFGoodrich</li><li>Firestone</li><li>Cooper</li><li>Toyo</li><li>Yokohama</li><li>Falken</li><li>Hankook</li><li>Kumho</li><li>Nitto</li><li>General</li><li>Uniroyal</li><li>Nexen</li><li>Mickey Thompson</li></ul>
+      </div>
+      <div class="brand-grp">
+        <p class="brand-h">Wheels</p>
+        <ul class="brand-list"><li>Forgiato</li><li>American Force</li><li>Fuel</li><li>Method</li><li>XD Series</li><li>KMC</li><li>Rotiform</li><li>Vossen</li><li>Niche</li><li>Moto Metal</li><li>Black Rhino</li><li>Asanti</li><li>Lexani</li><li>DUB</li><li>TIS</li><li>HRE</li></ul>
+      </div>
+  </div>
+</div>
 
 </body>
 </html>
